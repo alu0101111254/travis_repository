@@ -1,4 +1,4 @@
-#Prácticas 6 lpp: Test driven development & using bundler
+# Prácticas 6 lpp: Test driven development & using bundler
 Nombre: Lucas Christian Bodson Lobato
 Alu: 0101111254
 Grupo PE: 103
