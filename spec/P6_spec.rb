@@ -1,7 +1,7 @@
 RSpec.describe P6 do
   describe Alimento do
     before :each do
-      @alimento=Alimento.new("Carne de vaca",50.0,164.0)
+      @alimento=Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0)
     end
 
 it "has a version number" do
@@ -21,15 +21,19 @@ it "has a version number" do
   end
 
   it "Existe metodo que devuelve el nombre" do
-    expect(@alimento.name).to eq("Carne de vaca")
+    expect(@alimento).to respond_to(:name)
   end
 
   it "Existe metodo que devuelve el gei" do
-    expect(@alimento.gei).to eq(50.0)
+    expect(@alimento).to respond_to(:gei)
   end
 
   it "Existe metodo que devuelve el terreno" do
-    expect(@alimento.terrain).to eq(164.0)
+    expect(@alimento).to respond_to(:terrain)
+  end
+
+  it "Existe un metodo para obtener el alimento formateado" do
+    expect(@alimento).to respond_to(:to_s)
   end
 
  end
