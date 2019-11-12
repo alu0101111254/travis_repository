@@ -54,4 +54,18 @@ RSpec.describe P6 do
     expect((vaca.terrain*3)+(choco.terrain*1.35)+(lente.terrain*4)+(queso.terrain*1.5)+(huevo.terrain)).to eq(577.3900000000001)
     #puts (vaca.val_en()*3)+(choco.val_en()*1)+(lente.val_en()*3)+(queso.val_en()*1.1)+(huevo.val_en()*0.7)
   end
+
+  it "Se calcula correctamente el impacto ambiental de una mujer de 20-39 años" do
+    vaca=Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0)
+    choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+    lente=Alimento.new("lentejas", 23.5, 52.0,1.4,0.4,3.4)
+    queso=Alimento.new("queso", 25.0,1.3,33.0,11.0,41.0)
+    huevo=Alimento.new("huevo", 13.0,1.1,11.0,4.2,5.7)
+
+    expect((vaca.val_en*3)+(choco.val_en*1)+(lente.val_en*3)+(queso.val_en*1.1)+(huevo.val_en*0.7)).to be >= 2300.0
+    expect((vaca.proteins*3)+(choco.proteins*1)+(lente.proteins*3)+(queso.proteins*1.1)+(huevo.proteins*0.7)).to be >= 41.0
+    expect((vaca.gei*3)+(choco.gei*1)+(lente.gei*3)+(queso.gei*1.1)+(huevo.gei*0.7)).to eq(168.54)
+    expect((vaca.terrain*3)+(choco.terrain*1)+(lente.terrain*3)+(queso.terrain*1.1)+(huevo.terrain*0.7)).to eq(554.6899999999999)
+    #puts
+  end
 end
