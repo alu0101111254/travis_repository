@@ -24,5 +24,10 @@ it "has a version number" do
     expect(@alimento.name).to eq("Carne de vaca")
   end
 
+  it "Existe metodo que devuelve el gei" do
+    expect(@alimento.gei).to eq(50.0)
+  end
+
+
  end
 end
