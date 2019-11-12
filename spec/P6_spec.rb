@@ -16,5 +16,7 @@ it "has a version number" do
     expect(alimento).to have_attributes(:GEI => 50.0)
   end
 
-
+  it "Has a terrain" do
+    expect(alimento).to have_attributes(:terrain => 164.0)
+  end
 end
