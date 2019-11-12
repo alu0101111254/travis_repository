@@ -11,4 +11,10 @@ it "has a version number" do
   it "Has a name" do
     expect(alimento).to have_attributes(:name => "Carne de vaca")
   end
+
+  it "Has a GEI" do
+    expect(alimento).to have_attributes(:GEI => 50.0)
+  end
+
+
 end
