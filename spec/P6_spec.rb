@@ -28,6 +28,9 @@ it "has a version number" do
     expect(@alimento.gei).to eq(50.0)
   end
 
+  it "Existe metodo que devuelve el terreno" do
+    expect(@alimento.terrain).to eq(164.0)
+  end
 
  end
 end
