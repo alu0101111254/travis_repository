@@ -36,5 +36,8 @@ it "has a version number" do
     expect(@alimento).to respond_to(:to_s)
   end
 
+  it "Existe un metodo para obtener el valor energético de el alimento" do
+    expect(@alimento).to respond_to(:val_en)
+  end
  end
 end
