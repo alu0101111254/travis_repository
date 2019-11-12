@@ -9,15 +9,20 @@ it "has a version number" do
   end
 
   it "Has a name" do
-    expect(@alimento).to have_attributes(:name => "Carne de vaca")
+    expect(@alimento.name).not_to be nil
   end
 
   it "Has a GEI" do
-    expect(@alimento).to have_attributes(:gei => 50.0)
+    expect(@alimento.gei).not_to be nil
   end
 
   it "Has a terrain" do
-    expect(@alimento).to have_attributes(:terrain => 164.0)
+    expect(@alimento.gei).not_to be nil
   end
+
+  it "Existe metodo que devuelve el nombre" do
+    expect(@alimento.name).to eq("Carne de vaca")
+  end
+
  end
 end
