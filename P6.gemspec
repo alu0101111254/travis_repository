@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lucas Bodson"]
   spec.email         = ["alu0101111254@ull.edu.es"]
 
-  spec.summary       = %q{TODO: Practica 6 de lpp : TDD.}
-  spec.description   = %q{TODO: Usamos Test Driven Development para generar una clase para almacenar informacion de alimentos y evaluarlas.}
+  spec.summary       = %q{Practica 6 de lpp : TDD.}
+  spec.description   = %q{Usamos Test Driven Development para generar una clase para almacenar informacion de alimentos y evaluarlas.}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101111254"
 
   spec.metadata["allowed_push_host"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101111254"
