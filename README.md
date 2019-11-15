@@ -17,7 +17,7 @@ Una practica en la cual desarrollamos una clase alimento para evaluar el impacto
 	Se puede ejecutar mediante RAKE o mediante ruby p6_rspec.rb
 
 ## TREE
-'''bash
+```bash
 
     ├ bin
 
@@ -50,7 +50,7 @@ Una practica en la cual desarrollamos una clase alimento para evaluar el impacto
         ├ P6_spec.rb
 
         └ spec_helper.rb
-'''
+```
 
 ##CONTRIBUTING
 
