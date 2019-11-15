@@ -1,5 +1,7 @@
-# P6 LPP: Test Driven Development
-
+## P6 LPP: Test Driven Development
+#Lucas Christian Bodson Lobato
+#GRUPO:103
+#alu01011111254@ull.edu.es
 Una practica en la cual desarrollamos una clase alimento para evaluar el impacto ambiental usando la metodologia tdd, es decir haciendo pruebas antes del desarrollo
 
 ## Installacion
