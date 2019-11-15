@@ -20,35 +20,20 @@ Una practica en la cual desarrollamos una clase alimento para evaluar el impacto
 ```bash
 
     ├ bin
-
     │   ├ console
-
     │   └ setup
-
     ├ Gemfile
-
     ├ Gemfile.lock
-
     ├ lib
-
     │   ├ P6
-
     │   │   ├ P6.rb
-
     │   │   └ version.rb
-
     │   └ P6.rb
-
     ├ P6.gemspec
-
     ├ Rakefile
-
     ├ README.md
-
     └ spec
-
         ├ P6_spec.rb
-
         └ spec_helper.rb
 ```
 
