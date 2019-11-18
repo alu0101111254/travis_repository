@@ -82,6 +82,11 @@ RSpec.describe P6 do
       expect(@lista.head.prev).not_to be nil
     end
 
+    it "Existe una Lista con su cabeza y su cola" do
+      expect(@lista.head).not_to be nil
+      expect(@lista.tail).not_to be nil
+    end
+
   end
 
 
