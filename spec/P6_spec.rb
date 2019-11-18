@@ -72,14 +72,14 @@ RSpec.describe P6 do
 
   describe Lista do
     before :each do
-      @lista = Lista.new()
+      @lista = Lista.new(Node.new(5,nil,nil))
     end
 
     it "Existe un nodo de la lista con sus datos, su siguiente y su previo" do
-      expect(@alimento.head).not_to be nil
-      expect(@alimento.head.value).not_to be nil
-      expect(@alimento.head.next).not_to be nil
-      expect(@alimento.head.prev).not_to be nil
+      expect(@lista.head).not_to be nil
+      expect(@lista.head.value).not_to be nil
+      expect(@lista.head.next).not_to be nil
+      expect(@lista.head.prev).not_to be nil
     end
 
   end
