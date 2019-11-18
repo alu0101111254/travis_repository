@@ -95,6 +95,11 @@ RSpec.describe P6 do
       expect(@lista.insert).to respond_to?([120,12,32,4])
     end
 
+    it "Se extrae el primer elemento de la lista" do
+      expect(@lista).to respond_to(:extract_h)
+      expect(@lista.extract_h.value).to eq(5)
+    end
+
 
 
   end
