@@ -100,7 +100,10 @@ RSpec.describe P6 do
       expect(@lista.extract_h.value).to eq(5)
     end
 
-
+    it "Se extrae el ultimo elemento de la lista" do
+      expect(@lista).to respond_to(:extract_t)
+      #expect(@lista.extract_t.value).to eq(7)
+    end
 
   end
 
