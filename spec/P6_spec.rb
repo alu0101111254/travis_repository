@@ -68,4 +68,22 @@ RSpec.describe P6 do
     expect((vaca.terrain*3)+(choco.terrain*1)+(lente.terrain*3)+(queso.terrain*1.1)+(huevo.terrain*0.7)).to eq(554.6899999999999)
     #puts
   end
+
+
+  describe Lista do
+    before :each do
+      @lista = Lista.new()
+    end
+
+    it "Existe un nodo de la lista con sus datos, su siguiente y su previo" do
+      expect(@alimento.head).not_to be nil
+      expect(@alimento.head.value).not_to be nil
+      expect(@alimento.head.next).not_to be nil
+      expect(@alimento.head.prev).not_to be nil
+    end
+
+  end
+
+
+
 end
