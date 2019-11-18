@@ -87,6 +87,16 @@ RSpec.describe P6 do
       expect(@lista.tail).not_to be nil
     end
 
+    it "Se puede insertar un elemento en la Lista" do
+      expect(@lista.insert).to respond_to?(120)
+    end
+
+    it "Se pueden insertar varios elementos en la Lista" do
+      expect(@lista.insert).to respond_to?([120,12,32,4])
+    end
+
+
+
   end
 
 
