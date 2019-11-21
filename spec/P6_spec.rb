@@ -73,7 +73,7 @@ RSpec.describe P6 do
   describe Lista do
     before :each do
       hed=Node.new(5,nil,nil)
-      tai=Node.new(6,nil,hed)
+      tai=Node.new(7,nil,hed)
       hed.next=tai
       @lista = Lista.new(hed,tai)
     end
@@ -110,7 +110,7 @@ RSpec.describe P6 do
 
     it "Se extrae el ultimo elemento de la lista" do
       expect(@lista).to respond_to(:extract_t)
-      #expect(@lista.extract_t.value).to eq(7)
+      expect(@lista.extract_t.value).to eq(7)
     end
 
   end

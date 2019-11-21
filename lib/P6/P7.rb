@@ -23,6 +23,21 @@ class Lista
       @head.prev=temp
       @head=temp
   end
+
+  def extract_h()
+    temp=@head
+    @head=@head.next
+    @head.prev=nil
+    return temp
+  end
+
+  def extract_t()
+    temp=@tail
+    @tail=@tail.prev
+    @tail.next=nil
+    return temp
+  end
+
 end
 
 
