@@ -113,6 +113,60 @@ RSpec.describe P6 do
       expect(@lista.extract_t.value).to eq(7)
     end
 
+    it "Se estiman las emisiones diarias de gases de efecto invernadero para cada dieta." do
+      espanola=Lista.new(nil,nil)
+      algoritmo(20,40,40).each{ |alim| espanola.insert(alim)  }
+      gei=0
+      while espanola.tail!=nil do
+        gei+=espanola.extract_t.value.gei
+      end
+      puts gei
+      expect(gei).to eq(54.9)
+
+      vasca=Lista.new(nil,nil)
+      algoritmo(15,25,40).each{ |alim| vasca.insert(alim)  }
+      gei=0
+      while vasca.tail!=nil do
+        gei+=vasca.extract_t.value.gei
+      end
+      #puts gei
+      expect(gei).to eq(171.22000000000003)
+
+      vegetariana=Lista.new(nil,nil)
+      algoritmo_vegetariano(15,25,40).each{ |alim| vegetariana.insert(alim)  }
+      gei=0
+      while vegetariana.tail!=nil do
+        gei+=vegetariana.extract_t.value.gei
+      end
+      #puts gei
+      expect(gei).to eq(85.75999999999996)
+
+      vegetaliana=Lista.new(nil,nil)
+      algoritmo_vegetaliano(15,25,40).each{ |alim| vegetaliana.insert(alim)  }
+      gei=0
+      while vegetaliana.tail!=nil do
+        gei+=vegetaliana.extract_t.value.gei
+      end
+      puts gei
+      expect(gei).to eq(68.96)
+
+      lococarne=Lista.new(nil,nil)
+      lococarne.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
+      lococarne.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+      lococarne.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
+      lococarne.insert(Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4))
+      lococarne.insert(Alimento.new("Nuez", 20.0, 21.0, 54.0, 0.3, 7.9))
+
+      while lococarne.tail!=nil do
+        gei+=lococarne.extract_t.value.gei
+      end
+      puts gei
+      expect(gei).to eq(149.15999999999997)
+    end
+
+
+
+
   end
 
 
