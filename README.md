@@ -1,4 +1,4 @@
-# P6 LPP: Test Driven Development
+# P7 LPP: Test Driven Development usando guard
 
 ##Lucas Christian Bodson Lobato
 
@@ -7,6 +7,8 @@
 ##alu01011111254@ull.edu.es
 
 Una practica en la cual desarrollamos una clase alimento para evaluar el impacto ambiental usando la metodologia tdd, es decir haciendo pruebas antes del desarrollo
+
+A esto le anexamos una clase lista  y la clase nodo, además de distintas pruebas para estas
 
 ## Installacion
 
@@ -26,7 +28,8 @@ Una practica en la cual desarrollamos una clase alimento para evaluar el impacto
     ├ Gemfile.lock
     ├ lib
     │   ├ P6
-    │   │   ├ P6.rb
+    │   │   ├ P7.rb
+    │   ├   ├ P6.rb
     │   │   └ version.rb
     │   └ P6.rb
     ├ P6.gemspec
