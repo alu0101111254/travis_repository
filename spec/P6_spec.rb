@@ -215,7 +215,56 @@ RSpec.describe P6 do
       expect(gei*365).to eq(54443.39999999999)
     end
 
+    it "Se estiman el terreno necesarios para sostener cada dieta." do
+      espanola=Lista.new(nil,nil)
+      algoritmo(20,40,40).each{ |alim| espanola.insert(alim)  }
+      terrain=0
+      while espanola.tail!=nil do
+        terrain+=espanola.extract_t.value.terrain
+      end
+      #puts terrain
+      expect(terrain).to eq(178.7)
 
+      vasca=Lista.new(nil,nil)
+      algoritmo(15,25,40).each{ |alim| vasca.insert(alim)  }
+      terrain=0
+      while vasca.tail!=nil do
+        terrain+=vasca.extract_t.value.terrain
+      end
+      #puts terrain
+      expect(terrain).to eq(359.46)
+
+      vegetariana=Lista.new(nil,nil)
+      algoritmo_vegetariano(15,25,40).each{ |alim| vegetariana.insert(alim)  }
+      terrain=0
+      while vegetariana.tail!=nil do
+        terrain+=vegetariana.extract_t.value.terrain
+      end
+      #puts terrain
+      expect(terrain).to eq(131.68)
+
+      vegetaliana=Lista.new(nil,nil)
+      algoritmo_vegetaliano(15,25,40).each{ |alim| vegetaliana.insert(alim)  }
+      terrain=0
+      while vegetaliana.tail!=nil do
+        terrain+=vegetaliana.extract_t.value.terrain
+      end
+      puts terrain
+      expect(terrain).to eq(78.37999999999992)
+
+      lococarne=Lista.new(nil,nil)
+      lococarne.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
+      lococarne.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+      lococarne.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
+      lococarne.insert(Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4))
+      lococarne.insert(Alimento.new("Nuez", 20.0, 21.0, 54.0, 0.3, 7.9))
+
+      while lococarne.tail!=nil do
+        terrain+=lococarne.extract_t.value.terrain
+      end
+      #puts terrain
+      expect(terrain).to eq(449.67999999999995)
+    end
 
   end
 
