@@ -64,6 +64,8 @@ guard :rspec, cmd: "bundle exec rspec" do
       rspec.spec.call("acceptance/#{m[1]}")
     ]
   end
+  watch(%r{^lib/P6/(.+)\.rb$}) {dsl.rspec.spec_dir}
+  watch('lib/P6.rb')
 
   # Rails config changes
   watch(rails.spec_helper)     { rspec.spec_dir }
