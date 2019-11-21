@@ -3,16 +3,29 @@ Node = Struct.new(:value, :next, :prev)
 
 
 class Lista
-  attr_reader :head
+  attr_reader :head, :tail
   def initialize()
-##nyaa
   end
 
-  def initialize(head)
+  def initialize(head, tail)
     @head=head
+    @tail=tail
+  end
 
+  def insert(value)
+      temp=Node.new(value,nil,@tail)
+      @tail.next=temp
+      @tail=temp
+  end
+
+  def insert_back(value)
+      temp=Node.new(value,@head,nil)
+      @head.prev=temp
+      @head=temp
   end
 end
+
+
 
 def tt_f(b)
   b.proteins+b.carbos+b.lipids

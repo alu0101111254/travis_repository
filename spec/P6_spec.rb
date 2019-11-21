@@ -72,14 +72,19 @@ RSpec.describe P6 do
 
   describe Lista do
     before :each do
-      @lista = Lista.new(Node.new(5,nil,nil))
+      hed=Node.new(5,nil,nil)
+      tai=Node.new(6,nil,hed)
+      hed.next=tai
+      @lista = Lista.new(hed,tai)
     end
 
     it "Existe un nodo de la lista con sus datos, su siguiente y su previo" do
+      expect(@lista.insert(120)).to respond_to
+      expect(@lista.insert(120)).to respond_to
       expect(@lista.head).not_to be nil
-      expect(@lista.head.value).not_to be nil
-      expect(@lista.head.next).not_to be nil
-      expect(@lista.head.prev).not_to be nil
+      expect(@lista.head.next.value).not_to be nil
+      expect(@lista.head.next.next).not_to be nil
+      expect(@lista.head.next.prev).not_to be nil
     end
 
     it "Existe una Lista con su cabeza y su cola" do
@@ -88,11 +93,14 @@ RSpec.describe P6 do
     end
 
     it "Se puede insertar un elemento en la Lista" do
-      expect(@lista.insert).to respond_to?(120)
+      expect(@lista.insert(120)).to respond_to
     end
 
     it "Se pueden insertar varios elementos en la Lista" do
-      expect(@lista.insert).to respond_to?([120,12,32,4])
+      expect(@lista.insert(120)).to respond_to
+      expect(@lista.insert(121)).to respond_to
+      expect(@lista.insert(122)).to respond_to
+      expect(@lista.insert(123)).to respond_to
     end
 
     it "Se extrae el primer elemento de la lista" do
