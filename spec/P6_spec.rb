@@ -120,7 +120,7 @@ RSpec.describe P6 do
       while espanola.tail!=nil do
         gei+=espanola.extract_t.value.gei
       end
-      puts gei
+      #puts gei
       expect(gei).to eq(54.9)
 
       vasca=Lista.new(nil,nil)
@@ -147,7 +147,7 @@ RSpec.describe P6 do
       while vegetaliana.tail!=nil do
         gei+=vegetaliana.extract_t.value.gei
       end
-      puts gei
+      #puts gei
       expect(gei).to eq(68.96)
 
       lococarne=Lista.new(nil,nil)
@@ -160,7 +160,7 @@ RSpec.describe P6 do
       while lococarne.tail!=nil do
         gei+=lococarne.extract_t.value.gei
       end
-      puts gei
+      #puts gei
       expect(gei).to eq(149.15999999999997)
     end
 
@@ -198,7 +198,7 @@ RSpec.describe P6 do
       while vegetaliana.tail!=nil do
         gei+=vegetaliana.extract_t.value.gei
       end
-      puts gei
+      #puts gei
       expect(gei*365).to eq(25170.399999999998)
 
       lococarne=Lista.new(nil,nil)
@@ -211,7 +211,7 @@ RSpec.describe P6 do
       while lococarne.tail!=nil do
         gei+=lococarne.extract_t.value.gei
       end
-      puts gei
+      #puts gei
       expect(gei*365).to eq(54443.39999999999)
     end
 
@@ -249,7 +249,7 @@ RSpec.describe P6 do
       while vegetaliana.tail!=nil do
         terrain+=vegetaliana.extract_t.value.terrain
       end
-      puts terrain
+      #puts terrain
       expect(terrain).to eq(78.37999999999992)
 
       lococarne=Lista.new(nil,nil)
