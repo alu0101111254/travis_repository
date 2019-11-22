@@ -45,6 +45,13 @@ class Lista
     return temp
   end
 
+  def to_s()
+    result
+    while @head!=nil do
+      result+=extract_h.to_s
+    end
+    return result
+  end
 end
 
 
