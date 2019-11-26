@@ -62,6 +62,13 @@ RSpec.describe P6 do
           expect(@alimento>choco).to eq(false)
         end
 
+        it "metodo ==" do
+          vaca=Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0)#=
+          choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)#>
+          expect(@alimento==vaca).to eq(true)
+          expect(@alimento==choco).to eq(false)
+        end
+
       end
     end
   end
