@@ -87,7 +87,10 @@ RSpec.describe P6 do
           expect(@alimento.between?(cafe,choco)).to eq(true)
         end
          it "metodo clamp" do
-           expect(@alimento.clamp(600.0,700.0)).to eq(600)
+           cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
+           choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+           expect(@alimento.clamp(choco,choco).val_en).to eq(choco.val_en)
+           expect(@alimento.clamp(cafe,choco).val_en).to eq(@alimento.val_en)
          end
 
       end
