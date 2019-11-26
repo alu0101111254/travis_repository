@@ -6,6 +6,14 @@ class Lista
   attr_reader :head, :tail
 
   def initialize(head, tail)
+    if head==nil && tail!=nil then
+      @head=tail
+      @tail=tail
+    end
+    if head!=nil && tail==nil then
+      @head=head
+      @tail=head
+    end
     @head=head
     @tail=tail
   end
@@ -22,9 +30,14 @@ class Lista
   end
 
   def insert_back(value)
-    temp=Node.new(value,@head,nil)
-    @head.prev=temp
-    @head=temp
+    if (head==nil) then
+      @head=Node.new(value,nil,nil)
+      @tail=@head
+    else
+      temp=Node.new(value,@head,nil)
+      @head.prev=temp
+      @head=temp
+    end
   end
 
   def extract_h()
@@ -32,6 +45,9 @@ class Lista
     @head=@head.next
     if @head!=nil then
       @head.prev=nil
+    end
+    if @head==nil then
+      @tail=nil
     end
     return temp
   end
@@ -41,6 +57,9 @@ class Lista
     @tail=@tail.prev
     if @tail!=nil then
       @tail.next=nil
+    end
+    if @tail==nil then
+      @head=nil
     end
     return temp
   end
