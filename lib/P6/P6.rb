@@ -1,5 +1,6 @@
 class Alimento
 
+  include Comparable
   attr_reader :name, :gei, :terrain, :proteins, :lipids, :carbos
   def initialize(name,proteins,carbos,lipids,gei,terrain)
     @name, @proteins, @carbos, @lipids, @gei, @terrain = name, proteins, carbos, lipids, gei, terrain
@@ -14,5 +15,3 @@ class Alimento
   end
 
 end
-
-
