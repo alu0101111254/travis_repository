@@ -39,6 +39,15 @@ RSpec.describe P6 do
     it "Existe un metodo para obtener el valor energético de el alimento" do
       expect(@alimento).to respond_to(:val_en)
     end
+
+    it "funciona el método <=>" do
+      cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
+      choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)#>
+      vaca=Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0)#=
+      expect(@alimento<=>vaca).to eq(0)
+      expect(@alimento<=>cafe).to eq(1)
+      expect(@alimento<=>choco).to eq(-1)
+    end
   end
 
   it "Se calcula correctamente el impacto ambiental de un hombre de 20-39 años" do
@@ -69,17 +78,7 @@ RSpec.describe P6 do
     #puts
   end
 
-  it "funciona el método <=>" do
-    cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
-    choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)#>
-    vaca=Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0)#=
-    expect(@alimento<=>vaca).to eq(0)
-    expect(@alimento<=>cafe).to eq(1)
-    expect(@alimento<=>choco).to eq(-1)
-  end
 
-  
-end
 
 
   describe Lista do
@@ -280,7 +279,7 @@ end
         expect(terrain).to eq(449.67999999999995)
       end
     end
-
+  end
 
 
 
