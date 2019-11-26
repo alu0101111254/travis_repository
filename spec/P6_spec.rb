@@ -81,6 +81,12 @@ RSpec.describe P6 do
           expect(@alimento>=vaca).to eq(true)
         end
 
+        it "metodo between?" do
+          cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
+          choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+          expect(@alimento.between?(cafe,choco)).to eq(true)
+        end
+
       end
     end
   end
