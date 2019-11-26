@@ -69,6 +69,18 @@ RSpec.describe P6 do
     #puts
   end
 
+  it "funciona el método <=>" do
+    cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
+    choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)#>
+    vaca=Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0)#=
+    expect(@alimento<=>vaca).to eq(0)
+    expect(@alimento<=>cafe).to eq(1)
+    expect(@alimento<=>choco).to eq(-1)
+  end
+
+  
+end
+
 
   describe Lista do
     before :each do
@@ -268,7 +280,7 @@ RSpec.describe P6 do
         expect(terrain).to eq(449.67999999999995)
       end
     end
-  end
+
 
 
 
