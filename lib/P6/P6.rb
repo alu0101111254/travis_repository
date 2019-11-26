@@ -14,4 +14,8 @@ class Alimento
     (@carbos*4)+(@lipids*9)+(@proteins*4)
   end
 
+  def <=>(another)
+    return val_en <=> another.val_en
+  end
+
 end
