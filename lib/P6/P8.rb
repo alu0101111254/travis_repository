@@ -63,10 +63,10 @@ class BasicPlato
         resultado+=var.to_s
         resultado+="\n"
       end
-      resultado+="porcentaje proteinas:"+ prot.to_s + " \n"
-      resultado+="porcentaje lipidos:"+ lipid.to_s + " \n"
-      resultado+="porcentaje carbohidratos:"+ carbs.to_s + " \n"
-      resultado+="VCT:"+ vct.to_s + " \n"
+      resultado+="porcentaje proteinas: "+ prot.to_s + " \n"
+      resultado+="porcentaje lipidos: "+ lipid.to_s + " \n"
+      resultado+="porcentaje carbohidratos: "+ carbs.to_s + " \n"
+      resultado+="VCT: "+ vct.to_s + " \n"
     end
 
 end
@@ -93,4 +93,20 @@ class Plato < BasicPlato
     return(terrain)
   end
 
+  def to_s
+    resultado=""
+    resultado+="Nombre: "+@name+ "\n"
+    resultado+="alimentos: \n"
+    @list.each do |var|
+      resultado+=var.to_s
+      resultado+="\n"
+    end
+    resultado+="porcentaje proteinas: "+ prot.to_s + " \n"
+    resultado+="porcentaje lipidos: "+ lipid.to_s + " \n"
+    resultado+="porcentaje carbohidratos: "+ carbs.to_s + " \n"
+    resultado+="VCT: "+ vct.to_s + " \n"
+    resultado+="GEI: "+ gei_diario.to_s + " \n"
+    resultado+="Terrain: "+ terrain.to_s + " \n"
+
+  end
 end
