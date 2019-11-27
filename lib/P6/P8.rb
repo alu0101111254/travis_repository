@@ -85,5 +85,12 @@ class Plato < BasicPlato
     return(gei)
   end
 
+  def terrain
+    terrain=0
+    @list.each do |var|
+      terrain+=var.terrain
+    end
+    return(terrain)
+  end
 
 end
