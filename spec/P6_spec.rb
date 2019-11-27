@@ -427,6 +427,10 @@ RSpec.describe P6 do
     it "Valor total de la emisiones diarias de de gases de efecto invernadero." do
       expect(@pl2.gei_diario).to eq(50+20+7.6)
     end
+
+    it "Estimación de los metros cuadrados de uso de terreno." do
+      expect(@pl2.terrain).to eq(164.0+185.0+11.0)
+    end
   end
 
 
