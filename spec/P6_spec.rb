@@ -330,7 +330,6 @@ RSpec.describe P6 do
     context "Operaciones enumerate" do
       it "funciona el metodo each" do
         sum=0
-
         @lista.each do |cosa|
           sum+=cosa
         end
