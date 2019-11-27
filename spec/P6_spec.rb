@@ -353,6 +353,11 @@ RSpec.describe P6 do
         expect(@lista.select{|x| x==5 || x.even? }).to eq([1,8])
       end
 
+      it "funciona el mixin sort" do
+        @lista.insert(9)
+        expect(@lista.collect{|x| x*10}).to eq([9,7,5])
+      end
+
     end
   end
 
