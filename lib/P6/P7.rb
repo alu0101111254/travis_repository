@@ -75,7 +75,7 @@ class Lista
 
   def each
     nodo=@head
-    while (nodo!=head) do
+    while (nodo!=nil ) do
       yield nodo.value
       nodo=nodo.next
     end
