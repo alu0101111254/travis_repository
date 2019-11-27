@@ -411,6 +411,23 @@ RSpec.describe P6 do
     end
 
   end
+  describe Plato do
+    before :each do
+      @lista=Lista.new(nil,nil)
+      @lista.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
+      @lista.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+      @lista.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
+      @lista2=Lista.new(nil,nil)
+      @lista2.insert(100.0)
+      @lista2.insert(100.0)
+      @lista2.insert(100.0)
+      @pl2=Plato.new("Fiesta Carne",@lista,@lista2)
+    end
+
+    it "Valor total de la emisiones diarias de de gases de efecto invernadero." do
+      expect(@pl2.gei_diario).to eq(50+20+7.6)
+    end
+  end
 
 
 
