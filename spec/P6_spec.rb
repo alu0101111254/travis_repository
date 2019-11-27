@@ -326,6 +326,13 @@ RSpec.describe P6 do
         expect(terrain).to eq(449.67999999999995)
       end
     end
+
+    context "Operaciones enumerate" do
+      it "funciona el metodo each" do
+        expect(@lista.each).to eq(lista.head)
+        expect(@lista.each).to eq(lista.tail)
+      end
+    end
   end
 
 
