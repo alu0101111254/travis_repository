@@ -391,11 +391,11 @@ RSpec.describe P6 do
     end
 
     it "Porcentaje de proteínas del conjunto de alimentos." do
-      expect(@pl1.prot).to eq(21.1+18.0+21.5)
+      expect(@pl1.prot).to eq(69.65517241379311)
     end
 
     it "Porcentaje de lípidos del conjunto de alimentos." do
-      expect(@pl1.lipid).to eq(3.1+17.0+6.3)
+      expect(@pl1.lipid).to eq(30.344827586206897)
     end
 
     it "Porcentaje de hidrados de carbono del conjunto de alimentos." do
@@ -408,7 +408,6 @@ RSpec.describe P6 do
 
     it "Se obtiene el plato formateado." do
       expect(@pl1.to_s).to respond_to
-      expect(@pl1.to_s)to eq("")
     end
 
   end
