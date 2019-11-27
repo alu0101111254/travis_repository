@@ -337,6 +337,11 @@ RSpec.describe P6 do
         @lista.insert(10)
         expect(@lista.max).to eq(10)
       end
+
+      it "funciona el mixin min" do
+        @lista.insert(1)
+        expect(@lista.max).to eq(1)
+      end
     end
   end
 
