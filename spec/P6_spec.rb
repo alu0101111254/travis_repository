@@ -431,6 +431,10 @@ RSpec.describe P6 do
     it "Estimación de los metros cuadrados de uso de terreno." do
       expect(@pl2.terrain).to eq(164.0+185.0+11.0)
     end
+
+    it "Se obtiene la eficiencia energética formateada." do
+      expect(@pl2.to_s).to respond_to
+    end
   end
 
 
