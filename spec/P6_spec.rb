@@ -359,7 +359,7 @@ RSpec.describe P6 do
 
       it "funciona el mixin sort" do
         @lista.insert(9)
-        expect(@lista.collect{|x| x*10}).to eq([9,7,5])
+        expect(@lista.sort).to eq([5,7,9])
       end
 
     end
