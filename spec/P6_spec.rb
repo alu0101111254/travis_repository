@@ -342,6 +342,12 @@ RSpec.describe P6 do
         @lista.insert(1)
         expect(@lista.max).to eq(1)
       end
+
+      it "funciona el mixin collect" do
+        @lista.insert(9)
+        expect(@lista.collect{|x| x*10}).to eq([50,70,90])
+      end
+
     end
   end
 
