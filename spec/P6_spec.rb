@@ -410,6 +410,8 @@ RSpec.describe P6 do
       expect(@pl1.to_s).to respond_to
     end
 
+
+
   end
   describe Plato do
     before :each do
@@ -422,6 +424,16 @@ RSpec.describe P6 do
       @lista2.insert(100.0)
       @lista2.insert(100.0)
       @pl2=Plato.new("Fiesta Carne",@lista,@lista2)
+
+      @lista3=Lista.new(nil,nil)
+      @lista3.insert(Alimento.new("Cafe", 0.1, 0.0, 0.0, 0.4, 0.3))
+      @lista3.insert(Alimento.new("Cafe", 0.1, 0.0, 0.0, 0.4, 0.3))
+      @lista3.insert(Alimento.new("Cafe", 0.1, 0.0, 0.0, 0.4, 0.3))
+      @lista4=Lista.new(nil,nil)
+      @lista4.insert(100.0)
+      @lista4.insert(100.0)
+      @lista4.insert(100.0)
+      @pl3=Plato.new("sobredosis de cafe",@lista3,@lista4)
     end
 
     it "Valor total de la emisiones diarias de de gases de efecto invernadero." do
@@ -434,6 +446,64 @@ RSpec.describe P6 do
 
     it "Se obtiene la eficiencia energética formateada." do
       expect(@pl2.to_s).to respond_to
+    end
+
+    it "comprobar la clase" do
+      expect(@pl2).is_a?(Plato)
+    end
+
+    it "comprobar el tipo de objeto" do
+      expect(@pl2).kind_of?(BasicPlato)
+    end
+
+    it "comprobar la jerarquia de clases " do
+      expect(Plato.ancestors.include? BasicPlato).to eq(true)
+      expect(Plato.ancestors.include? Alimento).to eq(false)
+    end
+
+    context "Comparable" do
+
+      it "funciona el método <=>" do
+        expect(@p12<=>@p12).to eq(0)
+        expect(@pl2<=>@p13).to eq(1)
+        expect(@pl3<=>@p12).to eq(-1)
+      end
+
+      it "metodo <" do
+        expect(@pl2<@p13).to eq(false)
+        expect(@pl3<@p12).to eq(true)
+      end
+      it "metodo >" do
+        expect(@pl2>@p13).to eq(true)
+        expect(@pl3>@p12).to eq(false)
+      end
+
+      it "metodo ==" do
+        expect(@pl2==@p12).to eq(true)
+        expect(@pl3==@p12).to eq(false)
+      end
+
+      it "metodos >= y <=" do
+
+        expect(@pl2<=@p12).to eq(true)
+      end
+
+      it "metodo between?" do
+        cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
+        choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+        expect(@alimento.between?(cafe,choco)).to eq(true)
+      end
+      it "metodo clamp" do
+        cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
+        choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+        expect(@alimento.clamp(choco,choco).val_en).to eq(choco.val_en)
+        expect(@alimento.clamp(cafe,choco).val_en).to eq(@alimento.val_en)
+      end
+
+
+
+
+
     end
   end
 
