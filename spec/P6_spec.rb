@@ -329,8 +329,12 @@ RSpec.describe P6 do
 
     context "Operaciones enumerate" do
       it "funciona el metodo each" do
-        expect(@lista.each).to eq(lista.head)
-        expect(@lista.each).to eq(lista.tail)
+        sum=0
+        @lista.each do |cosa|
+          sum += cosa
+          puts aaaaaaaaaaaaaaaaaaaaa
+        end
+        expect(sum).to eq(5+7)
       end
 
       it "funciona el mixin max" do

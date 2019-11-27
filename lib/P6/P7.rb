@@ -4,7 +4,7 @@ Node = Struct.new(:value, :next, :prev)
 
 class Lista
   attr_reader :head, :tail
-  include enumerable
+  include Enumerable
 
   def initialize(head, tail)
     if head==nil && tail!=nil then
@@ -73,13 +73,13 @@ class Lista
     return result
   end
 
-  def each(&block)
-    if block_given? then
-      block.call(@head)
-      @tail.each(&block) if tail
-    else
-      to_enum(:each)
+  def each
+    nodo=@head
+    while (nodo!=head) do
+      yield nodo.value
+      nodo=nodo.next
     end
+  end
 end
 
 
