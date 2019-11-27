@@ -407,7 +407,7 @@ RSpec.describe P6 do
     end
 
     it "Se obtiene el plato formateado." do
-      expect(@pl1).to respond_to(:to_s)
+      expect(@pl1.to_s).to respond_to
       expect(@pl1.to_s)to eq("")
     end
 
