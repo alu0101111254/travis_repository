@@ -366,17 +366,20 @@ RSpec.describe P6 do
 
   describe BasicPlato do
     before :each do
-        lista=Lista.new(nil,nil)
-        lista.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
-        lista.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
-        lista.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
+        @lista=Lista.new(nil,nil)
+        @lista.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
+        @lista.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+        @lista.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
         @pl1=BasicPlato.new("Fiesta Carne",lista)
     end
 
     it "Obteniendo el nombre de un plato" do
-      expect(pl1.name).to eq("Fiesta Carne")
+      expect(@pl1.name).to eq("Fiesta Carne")
     end
-    #Existe un conjunto de alimentos.
+    it "Existe un conjunto de alimentos" do
+      expect(@pl1.list).not_to be nil
+      expect(@pl1.list).to eq(@lista)
+    end
     #Existe un conjunto de cantidades de alimentos en gramos.
     #Porcentaje de proteínas del conjunto de alimentos.
     #Porcentaje de lípidos del conjunto de alimentos.
