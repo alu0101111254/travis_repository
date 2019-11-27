@@ -398,12 +398,14 @@ RSpec.describe P6 do
       expect(@pl1.lipid).to eq(3.1+17.0+6.3)
     end
 
-    it "  Porcentaje de hidrados de carbono del conjunto de alimentos." do
+    it "Porcentaje de hidrados de carbono del conjunto de alimentos." do
       expect(@pl1.carbs).to eq(0.0)
     end
 
 
-    #Valor Calórico Total (V.C.T) del conjunto de alimentos expresado en kilocalor´ıas.
+    it "Valor Calórico Total (V.C.T) del conjunto de alimentos expresado en kilocalorías." do
+      expect(@pl1.vct).to eq(((21.1+18.0+21.5)*4)+((3.1+17.0+6.3)*9))
+    end
     #Se obtiene el plato formateado.
 
   end
