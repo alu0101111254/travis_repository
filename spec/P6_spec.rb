@@ -370,7 +370,11 @@ RSpec.describe P6 do
         @lista.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
         @lista.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
         @lista.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
-        @pl1=BasicPlato.new("Fiesta Carne",lista)
+        @lista2=Lista.new(nil,nil)
+        @lista2.insert(100.0)
+        @lista2.insert(100.0)
+        @lista2.insert(100.0)
+        @pl1=BasicPlato.new("Fiesta Carne",@lista,@lista2)
     end
 
     it "Obteniendo el nombre de un plato" do
@@ -380,7 +384,11 @@ RSpec.describe P6 do
       expect(@pl1.list).not_to be nil
       expect(@pl1.list).to eq(@lista)
     end
-    #Existe un conjunto de cantidades de alimentos en gramos.
+
+    it "Existe un conjunto de cantidades de alimentos en gramos." do
+      expect(@pl1.grams).not_to be nil
+      expect(@pl1.grams).to eq(@lista2)
+    end
     #Porcentaje de proteínas del conjunto de alimentos.
     #Porcentaje de lípidos del conjunto de alimentos.
     #Porcentaje de hidrados de carbono del conjunto de alimentos.
