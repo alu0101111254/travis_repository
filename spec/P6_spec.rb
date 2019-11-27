@@ -484,25 +484,21 @@ RSpec.describe P6 do
       end
 
       it "metodos >= y <=" do
-
+        expect(@pl2<=@p13).to eq(false)
+        expect(@pl3<=@p12).to eq(true)
+        expect(@pl2>=@p13).to eq(true)
+        expect(@pl3>=@p12).to eq(false)
         expect(@pl2<=@p12).to eq(true)
+        expect(@pl2>=@p12).to eq(true)
       end
 
       it "metodo between?" do
-        cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
-        choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
-        expect(@alimento.between?(cafe,choco)).to eq(true)
+        expect(@pl2.between?(@pl3,@pl3)).to eq(false)
+        expect(@pl2.between?(@pl2,@pl3)).to eq(true)
       end
       it "metodo clamp" do
-        cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
-        choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
-        expect(@alimento.clamp(choco,choco).val_en).to eq(choco.val_en)
-        expect(@alimento.clamp(cafe,choco).val_en).to eq(@alimento.val_en)
+        expect(@pl2.clamp(@pl3,@pl3)).to eq(@pl3.vct)
       end
-
-
-
-
 
     end
   end
