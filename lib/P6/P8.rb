@@ -76,4 +76,14 @@ class Plato < BasicPlato
   def initialize(name , list, grams)
     super(name , list, grams)
   end
+
+  def gei_diario
+    gei=0
+    @list.each do |var|
+      gei+=var.gei
+    end
+    return(gei)
+  end
+
+
 end
