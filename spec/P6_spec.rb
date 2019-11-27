@@ -364,6 +364,28 @@ RSpec.describe P6 do
     end
   end
 
+  describe BasicPlato do
+    before :each do
+        lista=Lista.new(nil,nil)
+        lista.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
+        lista.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+        lista.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
+        @pl1=BasicPlato.new("Fiesta Carne",lista)
+    end
+
+    it "Obteniendo el nombre de un plato" do
+      expect(pl1.name).to eq("Fiesta Carne")
+    end
+    #Existe un conjunto de alimentos.
+    #Existe un conjunto de cantidades de alimentos en gramos.
+    #Porcentaje de proteínas del conjunto de alimentos.
+    #Porcentaje de lípidos del conjunto de alimentos.
+    #Porcentaje de hidrados de carbono del conjunto de alimentos.
+    #Valor Calórico Total (V.C.T) del conjunto de alimentos expresado en kilocalor´ıas.
+    #Se obtiene el plato formateado.
+
+  end
+
 
 
 end
