@@ -402,11 +402,14 @@ RSpec.describe P6 do
       expect(@pl1.carbs).to eq(0.0)
     end
 
-
     it "Valor Calórico Total (V.C.T) del conjunto de alimentos expresado en kilocalorías." do
       expect(@pl1.vct).to eq(((21.1+18.0+21.5)*4)+((3.1+17.0+6.3)*9))
     end
-    #Se obtiene el plato formateado.
+
+    it "Se obtiene el plato formateado." do
+      expect(@pl1).to respond_to(:to_s)
+      expect(@pl1.to_s)to eq("")
+    end
 
   end
 
