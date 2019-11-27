@@ -389,7 +389,11 @@ RSpec.describe P6 do
       expect(@pl1.grams).not_to be nil
       expect(@pl1.grams).to eq(@lista2)
     end
-    #Porcentaje de proteínas del conjunto de alimentos.
+
+    it "Porcentaje de proteínas del conjunto de alimentos." do
+      expect(@pl1.prot).to eq(21.1+18.0+21.5)
+    end
+
     #Porcentaje de lípidos del conjunto de alimentos.
     #Porcentaje de hidrados de carbono del conjunto de alimentos.
     #Valor Calórico Total (V.C.T) del conjunto de alimentos expresado en kilocalor´ıas.
