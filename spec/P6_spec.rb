@@ -239,7 +239,7 @@ RSpec.describe P6 do
         vasca=Lista.new(nil,nil)
         algoritmo(15,25,40).each{ |alim| vasca.insert(alim)  }
         gei=0
-        puts vasca.to_s
+        #puts vasca.to_s
         while vasca.tail!=nil do
           gei+=vasca.extract_t.value.gei
         end
@@ -504,7 +504,7 @@ RSpec.describe P6 do
       it "metodo clamp" do
         expect(@pl4.clamp(@pl3,@pl2)).to eq(@pl2)
       end
-      context "Comparacion de los platos de cada dieta" do
+      context "Comparacion y enumeracion de los platos de cada dieta" do
         before :each do
 
           #espanola 20p40c40g
@@ -517,6 +517,7 @@ RSpec.describe P6 do
           @proporcionesE1.insert(50.0)
           @platoE1=Plato.new("Cortado largo",@ingredientesE1,@proporcionesE1)
 
+          @ingredientesE2=Lista.new(nil,nil)
           @ingredientesE2.insert(Alimento.new("Carne de vaca", 42.2, 0.0, 6.2, 100.0, 328.0))
           @ingredientesE2.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))
           @proporcionesE2=Lista.new(nil,nil)
@@ -546,6 +547,7 @@ RSpec.describe P6 do
           @proporcionesV1.insert(100.0)
           @platoV1=Plato.new("Cortado largo",@ingredientesV1,@proporcionesV1)
 
+          @ingredientesV2=Lista.new(nil,nil)
           @ingredientesV2.insert(Alimento.new("Cerveza", 1.0, 7.2, 0.0, 0.48, 0.44))
           @ingredientesV2.insert(Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4))
           @proporcionesV2=Lista.new(nil,nil)
@@ -568,13 +570,14 @@ RSpec.describe P6 do
           #vegetariana#española 85%carne=leche 15%=huevos
 
           @ingredientesVR1=Lista.new(nil,nil)
-          @ingredientesVL1.insert(Alimento.new("Café", 0.05, 0.0, 0.0, 0.2, 0.15))
-          @ingredientesVL1.insert(Alimento.new("Leche de vaca", 3.3*0.5, 4.8*0.5, 3.2*0.5, 3.2*0.5, 8.9*0.5))
+          @ingredientesVR1.insert(Alimento.new("Café", 0.05, 0.0, 0.0, 0.2, 0.15))
+          @ingredientesVR1.insert(Alimento.new("Leche de vaca", 3.3*0.5, 4.8*0.5, 3.2*0.5, 3.2*0.5, 8.9*0.5))
           @proporcionesVR1=Lista.new(nil,nil)
           @proporcionesVR1.insert(50.0)
           @proporcionesVR1.insert(50.0)
           @platoVR1=Plato.new("Cafe frutoso",@ingredientesVR1,@proporcionesVR1)
 
+          @ingredientesVR2=Lista.new(nil,nil)
           @ingredientesVR2.insert(Alimento.new("Leche de vaca", 3.3*1.7, 4.8*1.7, 3.2*1.7, 3.2*1.7, 8.9*1.7))
           @ingredientesVR2.insert(Alimento.new("Huevos", 13.0*0.3, 1.1*0.3, 11.0*0.3, 4.2*0.3, 5.7*0.3))
           @ingredientesVR2.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))
@@ -592,10 +595,10 @@ RSpec.describe P6 do
           @proporcionesVR3.insert(50.0)
           @platoVR3=Plato.new("Brownie con nueces",@ingredientesVR3,@proporcionesVR3)
 
-          @vegetarana= Lista.new(nil,nil)
-          @vegetarana.insert(@platoVR1)
-          @vegetarana.insert(@platoVR2)
-          @vegetarana.insert(@platoVR3)
+          @vegetariana= Lista.new(nil,nil)
+          @vegetariana.insert(@platoVR1)
+          @vegetariana.insert(@platoVR2)
+          @vegetariana.insert(@platoVR3)
 
 
 
@@ -608,6 +611,7 @@ RSpec.describe P6 do
           @proporcionesVL1.insert(100.0)
           @platoVL1=Plato.new("Cortado largo",@ingredientesVL1,@proporcionesVL1)
 
+          @ingredientesVL2=Lista.new(nil,nil)
           @ingredientesVL2.insert(Alimento.new("Lentejas", 23.5*1.5, 52.0*1.5, 1.4*1.5, 0.4*1.5, 3.4*1.5))
           @ingredientesVL2.insert(Alimento.new("Cerveza", 1.0, 7.2, 0.0, 0.48, 0.44))
           @ingredientesVL2.insert(Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2))
@@ -661,6 +665,37 @@ RSpec.describe P6 do
           @carnivora.insert(@platoC1)
           @carnivora.insert(@platoC2)
           @carnivora.insert(@platoC3)
+
+        end
+        context "comparacion" do
+
+
+        end
+        context "enumeracion" do
+          it "collect" do
+
+          end
+
+          it "select" do
+
+          end
+
+          it "max" do
+            expect(@espanola.max).to eq(@platoE3)
+            expect(@vasca.max).to eq(@platoV3)
+            expect(@vegetariana.max).to eq(@platoVR3)
+            expect(@vegetaliana.max).to eq(@platoVL1)
+            expect(@carnivora.max).to eq(@platoC3)
+          end
+
+          it "min" do
+
+          end
+
+          it "sort" do
+
+          end
+
 
         end
       end
