@@ -772,6 +772,20 @@ RSpec.describe P6 do
           end
 
           it "metodo between?" do
+            expect(@platoE2.between?(@platoE1,@platoE3)).to eq(true)
+            expect(@platoE2.between?(@platoE3,@platoE3)).to eq(false)
+
+            expect(@platoV2.between?(@platoV1,@platoV3)).to eq(true)
+            expect(@platoV2.between?(@platoV3,@platoV3)).to eq(false)
+
+            expect(@platoVR2.between?(@platoVR1,@platoVR3)).to eq(true)
+            expect(@platoVR2.between?(@platoVR3,@platoVR3)).to eq(false)
+
+            expect(@platoVL2.between?(@platoVL3,@platoVL1)).to eq(true)
+            expect(@platoVL2.between?(@platoVL3,@platoVL3)).to eq(false)
+
+            expect(@platoC1.between?(@platoC2,@platoC3)).to eq(true)
+            expect(@platoC2.between?(@platoC3,@platoC3)).to eq(false)
           end
 
           it "metodo clamp" do
