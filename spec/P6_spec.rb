@@ -709,6 +709,23 @@ RSpec.describe P6 do
           end
 
           it "metodo ==" do
+            expect(@platoE1==@platoE1).to eq(true)
+            expect(@platoV1==@platoV1).to eq(true)
+            expect(@platoVR1==@platoVR1).to eq(true)
+            expect(@platoVL1==@platoVL1).to eq(true)
+            expect(@platoC1==@platoC1).to eq(true)
+
+            expect(@platoE2==@platoE2).to eq(true)
+            expect(@platoV2==@platoV2).to eq(true)
+            expect(@platoVR2==@platoVR2).to eq(true)
+            expect(@platoVL2==@platoVL2).to eq(true)
+            expect(@platoC2==@platoC2).to eq(true)
+
+            expect(@platoE3==@platoE3).to eq(true)
+            expect(@platoV3==@platoV3).to eq(true)
+            expect(@platoVR3==@platoVR3).to eq(true)
+            expect(@platoVL3==@platoVL3).to eq(true)
+            expect(@platoC3==@platoC3).to eq(true)
           end
 
           it "metodos >= y <=" do
