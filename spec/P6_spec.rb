@@ -677,7 +677,17 @@ RSpec.describe P6 do
           end
 
           it "select" do
+            expect(@espanola.select{|x| x >= @platoE2 }).to eq([@platoE2,@platoE3])
+            expect(@vasca.select{|x| x >= @platoV2 }).to eq([@platoV2,@platoV3])
+            expect(@vegetariana.select{|x| x >= @platoVR2 }).to eq([@platoVR2,@platoVR3])
+            expect(@vegetaliana.select{|x| x >= @platoVL2 }).to eq([@platoVL1,@platoVL2])
+            expect(@carnivora.select{|x| x >= @platoC3 }).to eq([@platoC3])
 
+            expect(@espanola.select{|x| x < @platoE2 }).to eq([@platoE1])
+            expect(@vasca.select{|x| x < @platoV2 }).to eq([@platoV1])
+            expect(@vegetariana.select{|x| x < @platoVR2 }).to eq([@platoVR1])
+            expect(@vegetaliana.select{|x| x < @platoVL2 }).to eq([@platoVL3])
+            expect(@carnivora.select{|x| x < @platoC3 }).to eq([@platoC1,@platoC2])
           end
 
           it "max" do
