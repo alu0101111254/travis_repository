@@ -689,7 +689,23 @@ RSpec.describe P6 do
             expect(@platoC1<@platoC2).to eq(false)
             expect(@platoC3<@platoC2).to eq(false)
           end
+
           it "metodo >" do
+            #el not to es para que fuese mas facil de copiar lo de arriba y modificarlo
+            expect(@platoE1>@platoE2).not_to eq(true)
+            expect(@platoE3>@platoE2).not_to eq(false)
+
+            expect(@platoV1>@platoV2).not_to eq(true)
+            expect(@platoV3>@platoV2).not_to eq(false)
+
+            expect(@platoVR1>@platoVR2).not_to eq(true)
+            expect(@platoVR3>@platoVR2).not_to eq(false)
+
+            expect(@platoVL1>@platoVL2).not_to eq(false)
+            expect(@platoVL3>@platoVL2).not_to eq(true)
+
+            expect(@platoC1>@platoC2).not_to eq(false)
+            expect(@platoC3>@platoC2).not_to eq(false)
           end
 
           it "metodo ==" do
