@@ -464,32 +464,32 @@ RSpec.describe P6 do
     context "Comparable" do
 
       it "funciona el método <=>" do
-        expect(@p12<=>@p12).to eq(0)
-        expect(@pl2<=>@p13).to eq(1)
-        expect(@pl3<=>@p12).to eq(-1)
+        expect(@pl2<=>@pl2).to eq(0)
+        expect(@pl2<=>@pl3).to eq(1)
+        expect(@pl3<=>@pl2).to eq(-1)
       end
 
       it "metodo <" do
-        expect(@pl2<@p13).to eq(false)
-        expect(@pl3<@p12).to eq(true)
+        expect(@pl2<@pl3).to eq(false)
+        expect(@pl3<@pl2).to eq(true)
       end
       it "metodo >" do
-        expect(@pl2>@p13).to eq(true)
-        expect(@pl3>@p12).to eq(false)
+        expect(@pl2>@pl3).to eq(true)
+        expect(@pl3>@pl2).to eq(false)
       end
 
       it "metodo ==" do
-        expect(@pl2==@p12).to eq(true)
-        expect(@pl3==@p12).to eq(false)
+        expect(@pl2==@pl2).to eq(true)
+        expect(@pl3==@pl2).to eq(false)
       end
 
       it "metodos >= y <=" do
-        expect(@pl2<=@p13).to eq(false)
-        expect(@pl3<=@p12).to eq(true)
-        expect(@pl2>=@p13).to eq(true)
-        expect(@pl3>=@p12).to eq(false)
-        expect(@pl2<=@p12).to eq(true)
-        expect(@pl2>=@p12).to eq(true)
+        expect(@pl2<=@pl3).to eq(false)
+        expect(@pl3<=@pl2).to eq(true)
+        expect(@pl2>=@pl3).to eq(true)
+        expect(@pl3>=@pl2).to eq(false)
+        expect(@pl2<=@pl2).to eq(true)
+        expect(@pl2>=@pl2).to eq(true)
       end
 
       it "metodo between?" do

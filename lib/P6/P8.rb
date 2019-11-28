@@ -2,6 +2,8 @@ require "P6/P6"
 require "P6/P7"
 
 class BasicPlato
+  include Comparable
+
   attr_reader :name, :list, :grams
     def initialize(name , list, grams)
       @name=name
@@ -17,6 +19,9 @@ class BasicPlato
       return en_val
     end
 
+    def <=>(other)
+      return vct <=> other.vct
+    end
     #total de gramos de lipidos, carbohidratos y proteinas
     def total_nutr
       tot_gram=0.0
