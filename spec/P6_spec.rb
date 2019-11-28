@@ -668,6 +668,41 @@ RSpec.describe P6 do
 
         end
         context "comparacion" do
+            #expect(@espanola.sort).to eq([@platoE1,@platoE2,@platoE3])
+            #expect(@vasca.sort).to eq([@platoV1,@platoV2,@platoV3])
+            #expect(@vegetariana.sort).to eq([@platoVR1,@platoVR2,@platoVR3])
+            #expect(@vegetaliana.sort).to eq([@platoVL3,@platoVL2,@platoVL1])
+            #expect(@carnivora.sort).to eq([@platoC2,@platoC1,@platoC3])
+          it "metodo <" do
+            expect(@platoE1<@platoE2).to eq(true)
+            expect(@platoE3<@platoE2).to eq(false)
+
+            expect(@platoV1<@platoV2).to eq(true)
+            expect(@platoV3<@platoV2).to eq(false)
+
+            expect(@platoVR1<@platoVR2).to eq(true)
+            expect(@platoVR3<@platoVR2).to eq(false)
+
+            expect(@platoVL1<@platoVL2).to eq(false)
+            expect(@platoVL3<@platoVL2).to eq(true)
+
+            expect(@platoC1<@platoC2).to eq(false)
+            expect(@platoC3<@platoC2).to eq(false)
+          end
+          it "metodo >" do
+          end
+
+          it "metodo ==" do
+          end
+
+          it "metodos >= y <=" do
+          end
+
+          it "metodo between?" do
+          end
+
+          it "metodo clamp" do
+          end
 
 
         end
