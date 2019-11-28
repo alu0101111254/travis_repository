@@ -515,7 +515,7 @@ RSpec.describe P6 do
           @proporcionesE1=Lista.new(nil,nil)
           @proporcionesE1.insert(50.0)
           @proporcionesE1.insert(50.0)
-          @platoE1=Plato.new("Cortado largo",@ingredientesE1,@proporcionesE1)
+          @platoE1=Plato.new("Cortado",@ingredientesE1,@proporcionesE1)
 
           @ingredientesE2=Lista.new(nil,nil)
           @ingredientesE2.insert(Alimento.new("Carne de vaca", 42.2, 0.0, 6.2, 100.0, 328.0))
@@ -609,7 +609,7 @@ RSpec.describe P6 do
           @proporcionesVL1=Lista.new(nil,nil)
           @proporcionesVL1.insert(100.0)
           @proporcionesVL1.insert(100.0)
-          @platoVL1=Plato.new("Cortado largo",@ingredientesVL1,@proporcionesVL1)
+          @platoVL1=Plato.new("Cafe frutoso largo",@ingredientesVL1,@proporcionesVL1)
 
           @ingredientesVL2=Lista.new(nil,nil)
           @ingredientesVL2.insert(Alimento.new("Lentejas", 23.5*1.5, 52.0*1.5, 1.4*1.5, 0.4*1.5, 3.4*1.5))
@@ -689,7 +689,11 @@ RSpec.describe P6 do
           end
 
           it "min" do
-
+            expect(@espanola.min).to eq(@platoE1)
+            expect(@vasca.min).to eq(@platoV1)
+            expect(@vegetariana.min).to eq(@platoVR1)
+            expect(@vegetaliana.min).to eq(@platoVL3)
+            expect(@carnivora.min).to eq(@platoC2)
           end
 
           it "sort" do
