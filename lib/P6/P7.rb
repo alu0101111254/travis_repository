@@ -66,9 +66,9 @@ class Lista
   end
 
   def to_s()
-    result
-    while @head!=nil do
-      result+=extract_h.to_s
+    result=""
+    each do |nodo|
+      result+=nodo.to_s + "\n"
     end
     return result
   end

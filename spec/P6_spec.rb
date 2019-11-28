@@ -180,6 +180,7 @@ RSpec.describe P6 do
         while espanola.tail!=nil do
           gei+=espanola.extract_t.value.gei
         end
+
         #puts gei
         expect(gei).to eq(54.9)
 
@@ -501,7 +502,62 @@ RSpec.describe P6 do
       it "metodo clamp" do
         expect(@pl4.clamp(@pl3,@pl2)).to eq(@pl2)
       end
+      context "Comparacion de los platos de cada dieta" do
+        before :each do
+        #Alimento.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
+        #Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0)
+        #Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)
+        #Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)
+        #Alimento.new("Salmón", 19.9, 0.0, 13.6, 6.0, 3.7)
+        #Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0)
+        #Alimento.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1)
+        #Alimento.new("Queso", 25.0, 1.3, 33.0, 11.0, 41.0)
+        #Alimento.new("Cerveza", 0.5, 3.6, 0.0, 0.24, 0.22)
+        #Alimento.new("Leche de vaca", 3.3, 4.8, 3.2, 3.2, 8.9)
+        #Alimento.new("Huevos", 13.0, 1.1, 11.0, 4.2, 5.7)
+        #Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)
+        #Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2)
+        #Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)
+        #Alimento.new("Nuez", 20.0, 21.0, 54.0, 0.3, 7.9)
+          @espanola#20p40c40g
+          @vasca#15p25g60c
+          @vegetariana#española 85%carne=leche 15%=huevos
+          @vegetaliana#50c 50g
 
+          #Carnivora:50% carne
+          @ingredientesC1=Lista.new(nil,nil)
+          @ingredientesC1.insert(Alimento.new("Huevos", 13.0, 1.1, 11.0, 4.2, 5.7))
+          @ingredientesC1.insert(Alimento.new("Cerdo", 21.5*1.5, 0.0, 6.3*1.5, 7.6*1.5, 11.0*1.5))
+          @proporcionesC1=Lista.new(nil,nil)
+          @proporcionesC1.insert(100.0)
+          @proporcionesC1.insert(150.0)
+          @platoC1=Plato.new("Desayuno americano",@ingredientesC1,@proporcionesC1)
+
+          @ingredientesC2=Lista.new(nil,nil)
+          @ingredientesC2.insert(Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3))
+          @ingredientesC2.insert(Alimento.new("Leche de vaca", 3.3*0.5, 4.8*0.5, 3.2*0.5, 3.2*0.5, 8.9*0.5))
+          @ingredientesC2.insert(Alimento.new("Carne de vaca", 42.2, 0.0, 6.2, 100.0, 328.0))
+          @proporcionesC2=Lista.new(nil,nil)
+          @proporcionesC2.insert(100.0)
+          @proporcionesC2.insert(50.0)
+          @proporcionesC2.insert(200.0)
+          @platoC2=Plato.new("Steak + café con leche",@ingredientesC2,@proporcionesC2)
+
+          @ingredientesC3=Lista.new(nil,nil)
+          @ingredientesC3.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+          @ingredientesC3.insert(Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4))
+          @proporcionesC3=Lista.new(nil,nil)
+          @proporcionesC3.insert(100.0)
+          @proporcionesC3.insert(100.0)
+          @platoC3=Plato.new("Lentejas compuestas",@ingredientesC3,@proporcionesC3)
+
+          @carnivora= Lista.new(nil,nil)
+          @carnivora.insert(@platoC1)
+          @carnivora.insert(@platoC2)
+          @carnivora.insert(@platoC3)
+
+        end
+      end
     end
   end
 
