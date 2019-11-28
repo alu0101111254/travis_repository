@@ -674,6 +674,11 @@ RSpec.describe P6 do
         context "enumeracion" do
           it "collect" do
 
+              expect(@espanola.collect{|x| x}).to eq([@platoE1,@platoE2,@platoE3])
+              expect(@vasca.collect{|x| x}).to eq([@platoV1,@platoV2,@platoV3])
+              expect(@vegetariana.collect{|x| x}).to eq([@platoVR1,@platoVR2,@platoVR3])
+              expect(@vegetaliana.collect{|x| x}).to eq([@platoVL1,@platoVL2,@platoVL3])
+              expect(@carnivora.collect{|x| x}).to eq([@platoC1,@platoC2,@platoC3])
           end
 
           it "select" do
