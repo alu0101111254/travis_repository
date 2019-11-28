@@ -229,7 +229,7 @@ RSpec.describe P6 do
         espanola=Lista.new(nil,nil)
         algoritmo(20,40,40).each{ |alim| espanola.insert(alim)  }
         gei=0
-        puts espanola.to_s
+        #puts espanola.to_s
         while espanola.tail!=nil do
           gei+=espanola.extract_t.value.gei
         end
@@ -239,6 +239,7 @@ RSpec.describe P6 do
         vasca=Lista.new(nil,nil)
         algoritmo(15,25,40).each{ |alim| vasca.insert(alim)  }
         gei=0
+        puts vasca.to_s
         while vasca.tail!=nil do
           gei+=vasca.extract_t.value.gei
         end
@@ -505,21 +506,7 @@ RSpec.describe P6 do
       end
       context "Comparacion de los platos de cada dieta" do
         before :each do
-        #Alimento.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
-        #Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0)
-        #Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)
-        #Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)
-        #Alimento.new("Salmón", 19.9, 0.0, 13.6, 6.0, 3.7)
-        #Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0)
-        #Alimento.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1)
-        #Alimento.new("Queso", 25.0, 1.3, 33.0, 11.0, 41.0)
-        #Alimento.new("Cerveza", 0.5, 3.6, 0.0, 0.24, 0.22)
-        #Alimento.new("Leche de vaca", 3.3, 4.8, 3.2, 3.2, 8.9)
-        #Alimento.new("Huevos", 13.0, 1.1, 11.0, 4.2, 5.7)
-        #Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)
-        #Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2)
-        #Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)
-        #Alimento.new("Nuez", 20.0, 21.0, 54.0, 0.3, 7.9)
+
           #espanola 20p40c40g
 
           @ingredientesE1=Lista.new(nil,nil)
@@ -531,7 +518,7 @@ RSpec.describe P6 do
           @platoE1=Plato.new("Cortado largo",@ingredientesE1,@proporcionesE1)
 
           @ingredientesE2.insert(Alimento.new("Carne de vaca", 42.2, 0.0, 6.2, 100.0, 328.0))
-          @ingredientesE2.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.45))
+          @ingredientesE2.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))
           @proporcionesE2=Lista.new(nil,nil)
           @proporcionesE2.insert(200.0)
           @proporcionesE2.insert(50.0)
@@ -539,7 +526,7 @@ RSpec.describe P6 do
 
           @ingredientesE3=Lista.new(nil,nil)
           @ingredientesE3.insert(Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4))
-          @ingredientesE3.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.45))
+          @ingredientesE3.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))
           @proporcionesE3=Lista.new(nil,nil)
           @proporcionesE3.insert(200.0)
           @proporcionesE3.insert(50.0)
@@ -551,9 +538,115 @@ RSpec.describe P6 do
           @espanola.insert(@platoE3)
 
 
-          @vasca#15p25g60c
-          @vegetariana#española 85%carne=leche 15%=huevos
-          @vegetaliana#50c 50g
+          #Alimento.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
+          #Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0)
+          #Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)
+          #Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)
+          #Alimento.new("Salmón", 19.9, 0.0, 13.6, 6.0, 3.7)
+          #Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0)
+          #Alimento.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1)
+          #Alimento.new("Queso", 25.0, 1.3, 33.0, 11.0, 41.0)
+          #Alimento.new("Cerveza", 0.5, 3.6, 0.0, 0.24, 0.22) v2
+          #Alimento.new("Leche de vaca", 3.3, 4.8, 3.2, 3.2, 8.9)
+          #Alimento.new("Huevos", 13.0, 1.1, 11.0, 4.2, 5.7)
+          #Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)
+          #Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2) v4
+          #Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4) v1.5
+          #Alimento.new("Nuez", 20.0, 21.0, 54.0, 0.3, 7.9) v
+          #@vasca#15p25g60c
+          @ingredientesV1=Lista.new(nil,nil)
+          @ingredientesV1.insert(Alimento.new("Café", 0.05, 0.0, 0.0, 0.2, 0.15))#huevos
+          @ingredientesV1.insert(Alimento.new("Leche de vaca", 3.3*0.5, 4.8*0.5, 3.2*0.5, 3.2*0.5, 8.9*0.5))
+          @proporcionesV1=Lista.new(nil,nil)
+          @proporcionesV1.insert(50.0)
+          @proporcionesV1.insert(50.0)
+          @platoV1=Plato.new("Cortado largo",@ingredientesV1,@proporcionesV1)
+
+          @ingredientesV2.insert(Alimento.new("Carne de vaca", 42.2, 0.0, 6.2, 100.0, 328.0))#cerveza 250
+          @ingredientesV2.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))#
+          @proporcionesV2=Lista.new(nil,nil)
+          @proporcionesV2.insert(200.0)
+          @proporcionesV2.insert(50.0)
+          @platoV2=Plato.new("Filete de ternera con salsa de frutos secos",@ingredientesV2,@proporcionesV2)
+
+          @ingredientesV3=Lista.new(nil,nil)
+          @ingredientesV3.insert(Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4))
+          @ingredientesV3.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))
+          @proporcionesV3=Lista.new(nil,nil)
+          @proporcionesV3.insert(200.0)
+          @proporcionesV3.insert(50.0)
+          @platoV3=Plato.new("Brownie con nueces",@ingredientesV3,@proporcionesV3)
+
+          @vasca= Lista.new(nil,nil)
+          @vasca.insert(@platoV1)
+          @vasca.insert(@platoV2)
+          @vasca.insert(@platoV3)
+
+
+          #vegetariana#española 85%carne=leche 15%=huevos
+
+          @ingredientesVR1=Lista.new(nil,nil)
+          @ingredientesVL1.insert(Alimento.new("Café", 0.05, 0.0, 0.0, 0.2, 0.15))
+          @ingredientesVL1.insert(Alimento.new("Leche de vaca", 3.3*0.5, 4.8*0.5, 3.2*0.5, 3.2*0.5, 8.9*0.5))
+          @proporcionesVR1=Lista.new(nil,nil)
+          @proporcionesVR1.insert(50.0)
+          @proporcionesVR1.insert(50.0)
+          @platoVR1=Plato.new("Cafe frutoso",@ingredientesVR1,@proporcionesVR1)
+
+          @ingredientesVR2.insert(Alimento.new("Leche de vaca", 3.3*1.7, 4.8*1.7, 3.2*1.7, 3.2*1.7, 8.9*1.7))
+          @ingredientesVR2.insert(Alimento.new("Huevos", 13.0*0.3, 1.1*0.3, 11.0*0.3, 4.2*0.3, 5.7*0.3))
+          @ingredientesVR2.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))
+          @proporcionesVR2=Lista.new(nil,nil)
+          @proporcionesVR2.insert(170.0)
+          @proporcionesVR2.insert(30.0)
+          @proporcionesVR2.insert(50.0)
+          @platoVR2=Plato.new("Medley vegetariano",@ingredientesVR2,@proporcionesVR2)
+
+          @ingredientesVR3=Lista.new(nil,nil)
+          @ingredientesVR3.insert(Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4))
+          @ingredientesVR3.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.95))
+          @proporcionesVR3=Lista.new(nil,nil)
+          @proporcionesVR3.insert(200.0)
+          @proporcionesVR3.insert(50.0)
+          @platoVR3=Plato.new("Brownie con nueces",@ingredientesVR3,@proporcionesVR3)
+
+          @vegetarana= Lista.new(nil,nil)
+          @vegetarana.insert(@platoVR1)
+          @vegetarana.insert(@platoVR2)
+          @vegetarana.insert(@platoVR3)
+
+
+
+          #vegetaliana#50c 50g
+          @ingredientesVL1=Lista.new(nil,nil)
+          @ingredientesVL1.insert(Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3))
+          @ingredientesVL1.insert(Alimento.new("Nuez", 20.0, 21.0, 54.0, 0.3, 7.9))
+          @proporcionesVL1=Lista.new(nil,nil)
+          @proporcionesVL1.insert(100.0)
+          @proporcionesVL1.insert(100.0)
+          @platoVL1=Plato.new("Cortado largo",@ingredientesVL1,@proporcionesVL1)
+
+          @ingredientesVL2.insert(Alimento.new("Lentejas", 23.5*1.5, 52.0*1.5, 1.4*1.5, 0.4*1.5, 3.4*1.5))
+          @ingredientesVL2.insert(Alimento.new("Cerveza", 1.0, 7.2, 0.0, 0.48, 0.44))
+          @ingredientesVL2.insert(Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2))
+          @proporcionesVL2=Lista.new(nil,nil)
+          @proporcionesVL2.insert(150.0)
+          @proporcionesVL2.insert(200.0)
+          @proporcionesVL2.insert(100.0)
+          @platoVL2=Plato.new("Lentejas con tofu",@ingredientesVL2,@proporcionesVL2)
+
+          @ingredientesVL3=Lista.new(nil,nil)
+          @ingredientesVL3.insert(Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2))
+          @proporcionesVL3=Lista.new(nil,nil)
+          @proporcionesVL3.insert(300.0)
+          @platoVL3=Plato.new("Sopa de tofu",@ingredientesVL3,@proporcionesVL3)
+
+          @vegetaliana= Lista.new(nil,nil)
+          @vegetaliana.insert(@platoVL1)
+          @vegetaliana.insert(@platoVL2)
+          @vegetaliana.insert(@platoVL3)
+
+
 
           #Carnivora:50% carne
           @ingredientesC1=Lista.new(nil,nil)
