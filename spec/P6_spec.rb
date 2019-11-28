@@ -697,7 +697,11 @@ RSpec.describe P6 do
           end
 
           it "sort" do
-
+            expect(@espanola.sort).to eq([@platoE1,@platoE2,@platoE3])
+            expect(@vasca.sort).to eq([@platoV1,@platoV2,@platoV3])
+            expect(@vegetariana.sort).to eq([@platoVR1,@platoVR2,@platoVR3])
+            expect(@vegetaliana.sort).to eq([@platoVL3,@platoVL2,@platoVL1])
+            expect(@carnivora.sort).to eq([@platoC2,@platoC1,@platoC3])
           end
 
 
