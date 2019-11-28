@@ -229,6 +229,7 @@ RSpec.describe P6 do
         espanola=Lista.new(nil,nil)
         algoritmo(20,40,40).each{ |alim| espanola.insert(alim)  }
         gei=0
+        puts espanola.to_s
         while espanola.tail!=nil do
           gei+=espanola.extract_t.value.gei
         end
@@ -519,7 +520,37 @@ RSpec.describe P6 do
         #Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2)
         #Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)
         #Alimento.new("Nuez", 20.0, 21.0, 54.0, 0.3, 7.9)
-          @espanola#20p40c40g
+          #espanola 20p40c40g
+
+          @ingredientesE1=Lista.new(nil,nil)
+          @ingredientesE1.insert(Alimento.new("Café", 0.05, 0.0, 0.0, 0.2, 0.15))
+          @ingredientesE1.insert(Alimento.new("Leche de vaca", 3.3*0.5, 4.8*0.5, 3.2*0.5, 3.2*0.5, 8.9*0.5))
+          @proporcionesE1=Lista.new(nil,nil)
+          @proporcionesE1.insert(50.0)
+          @proporcionesE1.insert(50.0)
+          @platoE1=Plato.new("Cortado largo",@ingredientesE1,@proporcionesE1)
+
+          @ingredientesE2.insert(Alimento.new("Carne de vaca", 42.2, 0.0, 6.2, 100.0, 328.0))
+          @ingredientesE2.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.45))
+          @proporcionesE2=Lista.new(nil,nil)
+          @proporcionesE2.insert(200.0)
+          @proporcionesE2.insert(50.0)
+          @platoE2=Plato.new("Filete de ternera con salsa de frutos secos",@ingredientesE2,@proporcionesE2)
+
+          @ingredientesE3=Lista.new(nil,nil)
+          @ingredientesE3.insert(Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4))
+          @ingredientesE3.insert(Alimento.new("Nuez", 10.0, 10.5, 27.0, 0.15, 3.45))
+          @proporcionesE3=Lista.new(nil,nil)
+          @proporcionesE3.insert(200.0)
+          @proporcionesE3.insert(50.0)
+          @platoE3=Plato.new("Brownie con nueces",@ingredientesE3,@proporcionesE3)
+
+          @espanola= Lista.new(nil,nil)
+          @espanola.insert(@platoE1)
+          @espanola.insert(@platoE2)
+          @espanola.insert(@platoE3)
+
+
           @vasca#15p25g60c
           @vegetariana#española 85%carne=leche 15%=huevos
           @vegetaliana#50c 50g
