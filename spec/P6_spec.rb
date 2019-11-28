@@ -426,14 +426,16 @@ RSpec.describe P6 do
       @pl2=Plato.new("Fiesta Carne",@lista,@lista2)
 
       @lista3=Lista.new(nil,nil)
-      @lista3.insert(Alimento.new("Cafe", 0.1, 0.0, 0.0, 0.4, 0.3))
-      @lista3.insert(Alimento.new("Cafe", 0.1, 0.0, 0.0, 0.4, 0.3))
-      @lista3.insert(Alimento.new("Cafe", 0.1, 0.0, 0.0, 0.4, 0.3))
+      @lista3.insert(Alimento.new("Cafe", 0.3, 0.0, 0.0, 0.12, 0.9))
       @lista4=Lista.new(nil,nil)
-      @lista4.insert(100.0)
-      @lista4.insert(100.0)
-      @lista4.insert(100.0)
+      @lista4.insert(300.0)
       @pl3=Plato.new("sobredosis de cafe",@lista3,@lista4)
+
+      @lista5=Lista.new(nil,nil)
+      @lista5.insert(Alimento.new("Chocolate", 15.9, 47.0*3, 90.0, 2.3*3, 3.4*3))
+      @lista6=Lista.new(nil,nil)
+      @lista6.insert(100.0)
+      @pl4=Plato.new("Fuente de chocolate",@lista5,@lista6)
     end
 
     it "Valor total de la emisiones diarias de de gases de efecto invernadero." do
@@ -493,8 +495,8 @@ RSpec.describe P6 do
       end
 
       it "metodo between?" do
-        expect(@pl2.between?(@pl3,@pl3)).to eq(false)
-        expect(@pl2.between?(@pl2,@pl3)).to eq(true)
+        expect(@pl2.between?(@pl3,@pl4)).to eq(true)
+        expect(@pl2.between?(@pl2,@pl3)).to eq(false)
       end
       it "metodo clamp" do
         expect(@pl2.clamp(@pl3,@pl3)).to eq(@pl3.vct)
