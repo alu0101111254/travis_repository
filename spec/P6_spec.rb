@@ -499,7 +499,7 @@ RSpec.describe P6 do
         expect(@pl2.between?(@pl2,@pl3)).to eq(false)
       end
       it "metodo clamp" do
-        expect(@pl2.clamp(@pl3,@pl3)).to eq(@pl3.vct)
+        expect(@pl4.clamp(@pl3,@pl2)).to eq(@pl2)
       end
 
     end
