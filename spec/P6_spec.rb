@@ -712,6 +712,46 @@ RSpec.describe P6 do
           end
 
           it "metodos >= y <=" do
+            expect(@platoE1<=@platoE2).to eq(true)
+            expect(@platoE3<=@platoE2).to eq(false)
+            expect(@platoE1<=@platoE1).to eq(true)
+
+            expect(@platoV1<=@platoV2).to eq(true)
+            expect(@platoV3<=@platoV2).to eq(false)
+            expect(@platoV1<=@platoV1).to eq(true)
+
+            expect(@platoVR1<=@platoVR2).to eq(true)
+            expect(@platoVR3<=@platoVR2).to eq(false)
+            expect(@platoVR1<=@platoVR1).to eq(true)
+
+            expect(@platoVL1<=@platoVL2).to eq(false)
+            expect(@platoVL3<=@platoVL2).to eq(true)
+            expect(@platoVL1<=@platoVL1).to eq(true)
+
+            expect(@platoC1<=@platoC2).to eq(false)
+            expect(@platoC3<=@platoC2).to eq(false)
+            expect(@platoC1<=@platoC1).to eq(true)
+
+
+            expect(@platoE1>=@platoE2).not_to eq(true)
+            expect(@platoE3>=@platoE2).not_to eq(false)
+            expect(@platoE1>=@platoE1).to eq(true)
+
+            expect(@platoV1>=@platoV2).not_to eq(true)
+            expect(@platoV3>=@platoV2).not_to eq(false)
+            expect(@platoV1>=@platoV1).to eq(true)
+
+            expect(@platoVR1>=@platoVR2).not_to eq(true)
+            expect(@platoVR3>=@platoVR2).not_to eq(false)
+            expect(@platoVR1>=@platoVR1).to eq(true)
+
+            expect(@platoVL1>=@platoVL2).not_to eq(false)
+            expect(@platoVL3>=@platoVL2).not_to eq(true)
+            expect(@platoVL1>=@platoVL1).to eq(true)
+
+            expect(@platoC1>=@platoC2).not_to eq(false)
+            expect(@platoC3>=@platoC2).not_to eq(false)
+            expect(@platoC1>=@platoC1).to eq(true)
           end
 
           it "metodo between?" do
