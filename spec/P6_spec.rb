@@ -786,9 +786,24 @@ RSpec.describe P6 do
 
             expect(@platoC1.between?(@platoC2,@platoC3)).to eq(true)
             expect(@platoC2.between?(@platoC3,@platoC3)).to eq(false)
+
           end
 
           it "metodo clamp" do
+            expect(@platoE2.clamp(@platoE1,@platoE3)).to eq(@platoE2)
+            expect(@platoE2.clamp(@platoE3,@platoE3)).to eq(@platoE3)
+
+            expect(@platoV2.clamp(@platoV1,@platoV3)).to eq(@platoV2)
+            expect(@platoV2.clamp(@platoV3,@platoV3)).to eq(@platoV3)
+
+            expect(@platoVR2.clamp(@platoVR1,@platoVR3)).to eq(@platoVR2)
+            expect(@platoVR2.clamp(@platoVR3,@platoVR3)).to eq(@platoVR3)
+
+            expect(@platoVL2.clamp(@platoVL3,@platoVL1)).to eq(@platoVL2)
+            expect(@platoVL2.clamp(@platoVL3,@platoVL3)).to eq(@platoVL3)
+
+            expect(@platoC1.clamp(@platoC2,@platoC3)).to eq(@platoC1)
+            expect(@platoC2.clamp(@platoC3,@platoC3)).to eq(@platoC3)
           end
 
 
