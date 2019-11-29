@@ -1,4 +1,4 @@
-# P7 LPP: Test Driven Development usando guard
+# P8 LPP: Programación Orientada a Objetos. Herencia. Módulos.
 
 ##Lucas Christian Bodson Lobato
 
@@ -6,9 +6,8 @@
 
 ##alu01011111254@ull.edu.es
 
-Una practica en la cual desarrollamos una clase alimento para evaluar el impacto ambiental usando la metodologia tdd, es decir haciendo pruebas antes del desarrollo
-
-A esto le anexamos una clase lista  y la clase nodo, además de distintas pruebas para estas
+En esta práctica añadimos sobre la práctica 6 y 7 funciones de comparacion y enumeracion usando los mixins
+Enumerable y Comparable, además creamos una clase BasicPlato en la cual almacenamos una lista de alimentos y una lista de pesos por alimento, y de esta hereda otra clase plato la cual además incluye funciones para hallar el impacto ambiental.
 
 ## Installacion
 
@@ -20,24 +19,27 @@ A esto le anexamos una clase lista  y la clase nodo, además de distintas prueba
 
 ## TREE
 ```bash
-
-    ├ bin
-    │   ├ console
-    │   └ setup
-    ├ Gemfile
-    ├ Gemfile.lock
-    ├ lib
-    │   ├ P6
-    │   │   ├ P7.rb
-    │   ├   ├ P6.rb
-    │   │   └ version.rb
-    │   └ P6.rb
-    ├ P6.gemspec
-    ├ Rakefile
-    ├ README.md
-    └ spec
-        ├ P6_spec.rb
-        └ spec_helper.rb
+.
+├── bin
+│   ├── console
+│   └── setup
+├── Gemfile
+├── Gemfile.lock
+├── Guardfile
+├── lib
+│   ├── P6
+│   │   ├── P6.rb
+│   │   ├── P7.rb
+│   │   ├── P8.rb
+│   │   └── version.rb
+│   └── P6.rb
+├── P6.gemspec
+├── Rakefile
+├── README.md
+├── spec
+│   ├── P6_spec.rb
+│   └── spec_helper.rb
+└── tmp
 ```
 
 ##CONTRIBUTING

@@ -68,6 +68,11 @@ class BasicPlato
         resultado+=var.to_s
         resultado+="\n"
       end
+      resultado+="pesos: \n"
+      @grams.each do |var|
+        resultado+=var.to_s
+        resultado+="\n"
+      end
       resultado+="porcentaje proteinas: "+ prot.to_s + " \n"
       resultado+="porcentaje lipidos: "+ lipid.to_s + " \n"
       resultado+="porcentaje carbohidratos: "+ carbs.to_s + " \n"
@@ -106,6 +111,13 @@ class Plato < BasicPlato
       resultado+=var.to_s
       resultado+="\n"
     end
+
+    resultado+="pesos: \n"
+    @grams.each do |var|
+      resultado+=var.to_s
+      resultado+="\n"
+    end
+
     resultado+="porcentaje proteinas: "+ prot.to_s + " \n"
     resultado+="porcentaje lipidos: "+ lipid.to_s + " \n"
     resultado+="porcentaje carbohidratos: "+ carbs.to_s + " \n"
