@@ -858,6 +858,25 @@ RSpec.describe P6 do
 
 
         end
+
+        context "P9: huella nutricional" do
+            before :each do
+            menu=Array.new()
+            menu << platoC1
+            menu << platoVL2
+            menu << platoE2
+            menu << platoC2
+            menu << platoV3
+
+            precio_menu=Array.new()
+            menu << 3.00
+            menu << 4.20
+            menu << 2.00
+            menu << 5.50
+            menu << 3.30
+            end
+        end
+      
       end
     end
   end
