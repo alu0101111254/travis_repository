@@ -861,19 +861,25 @@ RSpec.describe P6 do
 
         context "P9: huella nutricional" do
             before :each do
-            menu=Array.new()
-            menu << platoC1
-            menu << platoVL2
-            menu << platoE2
-            menu << platoC2
-            menu << platoV3
 
-            precio_menu=Array.new()
-            menu << 3.00
-            menu << 4.20
-            menu << 2.00
-            menu << 5.50
-            menu << 3.30
+            @menu=Array.new()
+            @menu << @platoC1
+            @menu << @platoVL2
+            @menu << @platoE2
+            @menu << @platoC2
+            @menu << @platoVR3
+
+            @precio_menu=Array.new()
+            @precio_menu << 3.00
+            @precio_menu << 4.20
+            @precio_menu << 2.00
+            @precio_menu << 5.50
+            @precio_menu << 3.30
+            end
+
+            it "Encontrar plato con max huella" do
+
+                expect(@menu.max).to eq(@platoVR3)
             end
         end
       
