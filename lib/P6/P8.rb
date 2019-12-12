@@ -103,6 +103,28 @@ class Plato < BasicPlato
     return(terrain)
   end
 
+  def huella_nutricional
+      
+      impacto_kcal
+      impacto_gei
+      
+      if gei_diario<800 then impacto_gei=1
+      elsif gei_diario<1200 then impacto_gei=2
+      else impacto_gei=3
+      end
+
+      if vct<670 then impacto_kcal=1
+      elsif vct<830 then impacto_kcal=2
+      else impacto_kcal=3
+      end
+
+      return (impacto_gei+impacto_kcal)/2
+  end
+
+  def <=>(other)
+    return huella_nutricional <=> other.huella_nutricional
+  end
+
   def to_s
     resultado=""
     resultado+="Nombre: "+@name+ "\n"
