@@ -1,11 +1,19 @@
 require_relative 'P6'
+#Clase nodo, contiene un valor, el nodo siguiente y el nodo previo
+#@attr value Valor contenido en el nodo
+#@attr next Nodo siguiente al actual
+#@attr prev nodo previo al actual
 Node = Struct.new(:value, :next, :prev)
 
-
+#Clase lista, es una lista doblemente enlazada formada por nodos de la clase node
+#@author Lucas Christian Bodson Lobato
+#@attr_reader head Devuelve el nodo  cabeza de la Lista
+#@attr_reader tail Devuelve el nodo cola de la Lista
 class Lista
   attr_reader :head, :tail
   include Enumerable
 
+  #Constructor, requiere dos elementos, cabeza y cola, si la cola es de un solo elemento se puede poner nil en uno de los dos
   def initialize(head, tail)
     if head==nil && tail!=nil then
       @head=tail
@@ -19,6 +27,7 @@ class Lista
     @tail=tail
   end
 
+  #Metodo de insercion por la cabeza, el elemento insertado se convierte en la nueva cabeza, y la previa cabeza es el next de este
   def insert(value)
     if (head==nil) then
       @head=Node.new(value,nil,nil)
@@ -30,6 +39,7 @@ class Lista
     end
   end
 
+  #Metodo de insercion por cola, el elemento insertado se vuelve la cola, y la cola previa es el prev de este
   def insert_back(value)
     if (head==nil) then
       @head=Node.new(value,nil,nil)
@@ -41,6 +51,8 @@ class Lista
     end
   end
 
+  #Método para extrar la cabeza, se saca la cabeza de la lista, y el prev de esta se vuelve la nueva cabeza
+  #@return devuelve la cabeza extraída 
   def extract_h()
     temp=@head
     @head=@head.next
@@ -53,7 +65,10 @@ class Lista
     return temp
   end
 
+  #Método para extrar la cola, se saca la cola de la lista, y el next de esta se vuelve la nueva cola
+  #@return devuelve la cola extraída 
   def extract_t()
+    temp=@tail
     temp=@tail
     @tail=@tail.prev
     if @tail!=nil then
@@ -65,6 +80,7 @@ class Lista
     return temp
   end
 
+  #Devuelve un string conteniendo todos los to_s de los elementos de cada nodo
   def to_s()
     result=""
     each do |nodo|
@@ -73,6 +89,7 @@ class Lista
     return result
   end
 
+  #Metodo each, es un metodo que sirve para iterar por todos los elementos de la lista, es necesario para el funcionamiento de los mixins de Enumerable
   def each
     nodo=@head
     while (nodo!=nil ) do
@@ -83,13 +100,14 @@ class Lista
 end
 
 
-
+ #metodo para encontrar el peso de los nutrientes de un alimento
 def tt_f(b)
   b.proteins+b.carbos+b.lipids
 
 end
-#algoritmo para encontrar dietas
-#Porcentajes objetivo
+
+#algoritmo para encontrar dietas con porcentajes objetivo
+#@return Devuelve una lista con alimentos que en combinacion cumplen con los porcentajes objetivo
 def algoritmo(prot,gras,carb)
   pp=prot
   pl=gras
@@ -175,6 +193,9 @@ def algoritmo(prot,gras,carb)
   end
   return b
 end
+
+#Mismo algoritmo que algoritmo pero con elementos base vegetarianos
+#@see algoritmo
 def algoritmo_vegetariano(prot,gras,carb)
   pp=prot
   pl=gras
@@ -256,6 +277,8 @@ def algoritmo_vegetariano(prot,gras,carb)
   return b
 end
 
+#Mismo algoritmo que algoritmo pero con elementos base vegetalianos o veganos
+#@see algoritmo
 def algoritmo_vegetaliano(prot,gras,carb)
   pp=prot
   pl=gras

@@ -883,8 +883,10 @@ RSpec.describe P6 do
             end
 
             it "Cambiarle el precio al plato mayor" do
-                temp_menu = @precio_menu.zip(@menu).collect {|precio, item| (item == @menu.max) ? precio*1.3 : precio  }
-                expect(temp_menu.last).to eq(3.30*1.3)
+                temp_menu = @precio_menu.collect {|precio| precio*@menu.max.huella_nutricional*0.5  }
+                temp_menu.zip(@precio_menu).each do |nuevoP,originalP|
+                    expect(nuevoP).to eq(originalP*@menu.max.huella_nutricional*0.5)
+                end
             end
         end
       
