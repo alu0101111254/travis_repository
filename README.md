@@ -1,4 +1,4 @@
-# P8 LPP: Programación Orientada a Objetos. Herencia. Módulos.
+# P9 LPP
 
 ##Lucas Christian Bodson Lobato
 
@@ -6,7 +6,7 @@
 
 ##alu01011111254@ull.edu.es
 
-En esta práctica añadimos sobre la práctica 6 y 7 funciones de comparacion y enumeracion usando los mixins
+En esta práctica añadimos sobre la práctica 6,7 Y 8 pruebas usando programacion funcional y modificamos un poco la calse plato hija
 Enumerable y Comparable, además creamos una clase BasicPlato en la cual almacenamos una lista de alimentos y una lista de pesos por alimento, y de esta hereda otra clase plato la cual además incluye funciones para hallar el impacto ambiental.
 
 ## Installacion
@@ -39,7 +39,52 @@ Enumerable y Comparable, además creamos una clase BasicPlato en la cual almacen
 ├── spec
 │   ├── P6_spec.rb
 │   └── spec_helper.rb
-└── tmp
+└── tmp.
+├ Gemfile
+├ Gemfile.lock
+├ Guardfile
+├ P6.gemspec
+├ README.md
+├ Rakefile
+├ bin
+│   ├ console
+│   └ setup
+├ docs
+│   ├ Alimento.html
+│   ├ BasicPlato.html
+│   ├ Lista.html
+│   ├ Node.html
+│   ├ P6
+│   │   └ Error.html
+│   ├ P6.html
+│   ├ Plato.html
+│   ├ _index.html
+│   ├ class_list.html
+│   ├ css
+│   │   ├ common.css
+│   │   ├ full_list.css
+│   │   └ style.css
+│   ├ file.README.html
+│   ├ file_list.html
+│   ├ frames.html
+│   ├ index.html
+│   ├ js
+│   │   ├ app.js
+│   │   ├ full_list.js
+│   │   └ jquery.js
+│   ├ method_list.html
+│   └ top-level-namespace.html
+├ lib
+│   ├ P6
+│   │   ├ P6.rb
+│   │   ├ P7.rb
+│   │   ├ P8.rb
+│   │   └ version.rb
+│   └ P6.rb
+├ spec
+│   ├ P6_spec.rb
+│   └ spec_helper.rb
+└ tmp
 ```
 
 ##CONTRIBUTING
