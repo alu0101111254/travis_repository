@@ -1,7 +1,6 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "P6/version"
-
 Gem::Specification.new do |spec|
   spec.name          = "P6"
   spec.version       = P6::VERSION
