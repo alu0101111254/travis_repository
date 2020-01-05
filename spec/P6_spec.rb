@@ -875,6 +875,8 @@ RSpec.describe P6 do
             @precio_menu << 2.00
             @precio_menu << 5.50
             @precio_menu << 3.30
+
+
             end
 
             it "Encontrar plato con max huella" do
@@ -888,12 +890,15 @@ RSpec.describe P6 do
                     expect(nuevoP).to eq(originalP*@menu.max.huella_nutricional*0.5)
                 end
             end
+            it "menu funca" do
+              tmenu=Menu.new("POPURRI","Cosas aleatorias",@menu,@precio_menu)
+              puts tmenu.to_s()
+            end
         end
-      
+
       end
     end
   end
-
 
 
 
