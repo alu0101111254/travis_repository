@@ -86,12 +86,12 @@ RSpec.describe P6 do
           choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
           expect(@alimento.between?(cafe,choco)).to eq(true)
         end
-         it "metodo clamp" do
-           cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
-           choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
-           expect(@alimento.clamp(choco,choco).val_en).to eq(choco.val_en)
-           expect(@alimento.clamp(cafe,choco).val_en).to eq(@alimento.val_en)
-         end
+        it "metodo clamp" do
+          cafe=Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3)#<
+          choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+          expect(@alimento.clamp(choco,choco).val_en).to eq(choco.val_en)
+          expect(@alimento.clamp(cafe,choco).val_en).to eq(@alimento.val_en)
+        end
 
       end
     end
@@ -369,15 +369,15 @@ RSpec.describe P6 do
 
   describe BasicPlato do
     before :each do
-        @lista=Lista.new(nil,nil)
-        @lista.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
-        @lista.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
-        @lista.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
-        @lista2=Lista.new(nil,nil)
-        @lista2.insert(100.0)
-        @lista2.insert(100.0)
-        @lista2.insert(100.0)
-        @pl1=BasicPlato.new("Fiesta Carne",@lista,@lista2)
+      @lista=Lista.new(nil,nil)
+      @lista.insert(Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0))
+      @lista.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+      @lista.insert(Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0))
+      @lista2=Lista.new(nil,nil)
+      @lista2.insert(100.0)
+      @lista2.insert(100.0)
+      @lista2.insert(100.0)
+      @pl1=BasicPlato.new("Fiesta Carne",@lista,@lista2)
     end
 
     it "Obteniendo el nombre de un plato" do
@@ -467,43 +467,43 @@ RSpec.describe P6 do
     end
 
     context "Comparable" do
-#
-#      it "funciona el método <=>" do
-#        expect(@pl2<=>@pl2).to eq(0)
-#        expect(@pl2<=>@pl3).to eq(1)
-#        expect(@pl3<=>@pl2).to eq(-1)
-#      end
-#
-#      it "metodo <" do
-#        expect(@pl2<@pl3).to eq(false)
-#        expect(@pl3<@pl2).to eq(true)
-#      end
-#      it "metodo >" do
-#        expect(@pl2>@pl3).to eq(true)
-#        expect(@pl3>@pl2).to eq(false)
-#      end
-#
-#      it "metodo ==" do
-#        expect(@pl2==@pl2).to eq(true)
-#        expect(@pl3==@pl2).to eq(false)
-#      end
-#
-#      it "metodos >= y <=" do
-#        expect(@pl2<=@pl3).to eq(false)
-#        expect(@pl3<=@pl2).to eq(true)
-#        expect(@pl2>=@pl3).to eq(true)
-#        expect(@pl3>=@pl2).to eq(false)
-#        expect(@pl2<=@pl2).to eq(true)
-#        expect(@pl2>=@pl2).to eq(true)
-#      end
-#
-#      it "metodo between?" do
-#        expect(@pl2.between?(@pl3,@pl4)).to eq(true)
-#        expect(@pl2.between?(@pl2,@pl3)).to eq(false)
-#      end
-#      it "metodo clamp" do
-#        expect(@pl4.clamp(@pl3,@pl2)).to eq(@pl2)
-#      end
+      #
+      #      it "funciona el método <=>" do
+      #        expect(@pl2<=>@pl2).to eq(0)
+      #        expect(@pl2<=>@pl3).to eq(1)
+      #        expect(@pl3<=>@pl2).to eq(-1)
+      #      end
+      #
+      #      it "metodo <" do
+      #        expect(@pl2<@pl3).to eq(false)
+      #        expect(@pl3<@pl2).to eq(true)
+      #      end
+      #      it "metodo >" do
+      #        expect(@pl2>@pl3).to eq(true)
+      #        expect(@pl3>@pl2).to eq(false)
+      #      end
+      #
+      #      it "metodo ==" do
+      #        expect(@pl2==@pl2).to eq(true)
+      #        expect(@pl3==@pl2).to eq(false)
+      #      end
+      #
+      #      it "metodos >= y <=" do
+      #        expect(@pl2<=@pl3).to eq(false)
+      #        expect(@pl3<=@pl2).to eq(true)
+      #        expect(@pl2>=@pl3).to eq(true)
+      #        expect(@pl3>=@pl2).to eq(false)
+      #        expect(@pl2<=@pl2).to eq(true)
+      #        expect(@pl2>=@pl2).to eq(true)
+      #      end
+      #
+      #      it "metodo between?" do
+      #        expect(@pl2.between?(@pl3,@pl4)).to eq(true)
+      #        expect(@pl2.between?(@pl2,@pl3)).to eq(false)
+      #      end
+      #      it "metodo clamp" do
+      #        expect(@pl4.clamp(@pl3,@pl2)).to eq(@pl2)
+      #      end
       context "Comparacion y enumeracion de los platos de cada dieta" do
         before :each do
 
@@ -668,46 +668,46 @@ RSpec.describe P6 do
 
         end
         context "comparacion" do
-            #expect(@espanola.sort).to eq([@platoE1,@platoE2,@platoE3])
-            #expect(@vasca.sort).to eq([@platoV1,@platoV2,@platoV3])
-            #expect(@vegetariana.sort).to eq([@platoVR1,@platoVR2,@platoVR3])
-            #expect(@vegetaliana.sort).to eq([@platoVL3,@platoVL2,@platoVL1])
-            #expect(@carnivora.sort).to eq([@platoC2,@platoC1,@platoC3])
-#          it "metodo <" do
-#            expect(@platoE1<@platoE2).to eq(true)
-#            expect(@platoE3<@platoE2).to eq(false)
-#
-#            expect(@platoV1<@platoV2).to eq(true)
-#            expect(@platoV3<@platoV2).to eq(false)
-#
-#            expect(@platoVR1<@platoVR2).to eq(true)
-#            expect(@platoVR3<@platoVR2).to eq(false)
-#
-#            expect(@platoVL1<@platoVL2).to eq(false)
-#            expect(@platoVL3<@platoVL2).to eq(true)
-#
-#            expect(@platoC1<@platoC2).to eq(false)
-#            expect(@platoC3<@platoC2).to eq(false)
-#          end
-#
-#          it "metodo >" do
-#            #el not to es para que fuese mas facil de copiar lo de arriba y modificarlo
-#            expect(@platoE1>@platoE2).not_to eq(true)
-#            expect(@platoE3>@platoE2).not_to eq(false)
-#
-#            expect(@platoV1>@platoV2).not_to eq(true)
-#            expect(@platoV3>@platoV2).not_to eq(false)
-#
-#            expect(@platoVR1>@platoVR2).not_to eq(true)
-#            expect(@platoVR3>@platoVR2).not_to eq(false)
-#
-#            expect(@platoVL1>@platoVL2).not_to eq(false)
-#            expect(@platoVL3>@platoVL2).not_to eq(true)
-#
-#            expect(@platoC1>@platoC2).not_to eq(false)
-#            expect(@platoC3>@platoC2).not_to eq(false)
-#          end
-#
+          #expect(@espanola.sort).to eq([@platoE1,@platoE2,@platoE3])
+          #expect(@vasca.sort).to eq([@platoV1,@platoV2,@platoV3])
+          #expect(@vegetariana.sort).to eq([@platoVR1,@platoVR2,@platoVR3])
+          #expect(@vegetaliana.sort).to eq([@platoVL3,@platoVL2,@platoVL1])
+          #expect(@carnivora.sort).to eq([@platoC2,@platoC1,@platoC3])
+          #          it "metodo <" do
+          #            expect(@platoE1<@platoE2).to eq(true)
+          #            expect(@platoE3<@platoE2).to eq(false)
+          #
+          #            expect(@platoV1<@platoV2).to eq(true)
+          #            expect(@platoV3<@platoV2).to eq(false)
+          #
+          #            expect(@platoVR1<@platoVR2).to eq(true)
+          #            expect(@platoVR3<@platoVR2).to eq(false)
+          #
+          #            expect(@platoVL1<@platoVL2).to eq(false)
+          #            expect(@platoVL3<@platoVL2).to eq(true)
+          #
+          #            expect(@platoC1<@platoC2).to eq(false)
+          #            expect(@platoC3<@platoC2).to eq(false)
+          #          end
+          #
+          #          it "metodo >" do
+          #            #el not to es para que fuese mas facil de copiar lo de arriba y modificarlo
+          #            expect(@platoE1>@platoE2).not_to eq(true)
+          #            expect(@platoE3>@platoE2).not_to eq(false)
+          #
+          #            expect(@platoV1>@platoV2).not_to eq(true)
+          #            expect(@platoV3>@platoV2).not_to eq(false)
+          #
+          #            expect(@platoVR1>@platoVR2).not_to eq(true)
+          #            expect(@platoVR3>@platoVR2).not_to eq(false)
+          #
+          #            expect(@platoVL1>@platoVL2).not_to eq(false)
+          #            expect(@platoVL3>@platoVL2).not_to eq(true)
+          #
+          #            expect(@platoC1>@platoC2).not_to eq(false)
+          #            expect(@platoC3>@platoC2).not_to eq(false)
+          #          end
+          #
           it "metodo ==" do
             expect(@platoE1==@platoE1).to eq(true)
             expect(@platoV1==@platoV1).to eq(true)
@@ -728,139 +728,139 @@ RSpec.describe P6 do
             expect(@platoC3==@platoC3).to eq(true)
           end
 
-#          it "metodos >= y <=" do
-#            expect(@platoE1<=@platoE2).to eq(true)
-#            expect(@platoE3<=@platoE2).to eq(false)
-#            expect(@platoE1<=@platoE1).to eq(true)
-#
-#            expect(@platoV1<=@platoV2).to eq(true)
-#            expect(@platoV3<=@platoV2).to eq(false)
-#            expect(@platoV1<=@platoV1).to eq(true)
-#
-#            expect(@platoVR1<=@platoVR2).to eq(true)
-#            expect(@platoVR3<=@platoVR2).to eq(false)
-#            expect(@platoVR1<=@platoVR1).to eq(true)
-#
-#            expect(@platoVL1<=@platoVL2).to eq(false)
-#            expect(@platoVL3<=@platoVL2).to eq(true)
-#            expect(@platoVL1<=@platoVL1).to eq(true)
-#
-#            expect(@platoC1<=@platoC2).to eq(false)
-#            expect(@platoC3<=@platoC2).to eq(false)
-#            expect(@platoC1<=@platoC1).to eq(true)
-#
-#
-#            expect(@platoE1>=@platoE2).not_to eq(true)
-#            expect(@platoE3>=@platoE2).not_to eq(false)
-#            expect(@platoE1>=@platoE1).to eq(true)
-#
-#            expect(@platoV1>=@platoV2).not_to eq(true)
-#            expect(@platoV3>=@platoV2).not_to eq(false)
-#            expect(@platoV1>=@platoV1).to eq(true)
-#
-#            expect(@platoVR1>=@platoVR2).not_to eq(true)
-#            expect(@platoVR3>=@platoVR2).not_to eq(false)
-#            expect(@platoVR1>=@platoVR1).to eq(true)
-#
-#            expect(@platoVL1>=@platoVL2).not_to eq(false)
-#            expect(@platoVL3>=@platoVL2).not_to eq(true)
-#            expect(@platoVL1>=@platoVL1).to eq(true)
-#
-#            expect(@platoC1>=@platoC2).not_to eq(false)
-#            expect(@platoC3>=@platoC2).not_to eq(false)
-#            expect(@platoC1>=@platoC1).to eq(true)
-#          end
-#
-#          it "metodo between?" do
-#            expect(@platoE2.between?(@platoE1,@platoE3)).to eq(true)
-#            expect(@platoE2.between?(@platoE3,@platoE3)).to eq(false)
-#
-#            expect(@platoV2.between?(@platoV1,@platoV3)).to eq(true)
-#            expect(@platoV2.between?(@platoV3,@platoV3)).to eq(false)
-#
-#            expect(@platoVR2.between?(@platoVR1,@platoVR3)).to eq(true)
-#            expect(@platoVR2.between?(@platoVR3,@platoVR3)).to eq(false)
-#
-#            expect(@platoVL2.between?(@platoVL3,@platoVL1)).to eq(true)
-#            expect(@platoVL2.between?(@platoVL3,@platoVL3)).to eq(false)
-#
-#            expect(@platoC1.between?(@platoC2,@platoC3)).to eq(true)
-#            expect(@platoC2.between?(@platoC3,@platoC3)).to eq(false)
-#
-#          end
-#
-#          it "metodo clamp" do
-#            expect(@platoE2.clamp(@platoE1,@platoE3)).to eq(@platoE2)
-#            expect(@platoE2.clamp(@platoE3,@platoE3)).to eq(@platoE3)
-#
-#            expect(@platoV2.clamp(@platoV1,@platoV3)).to eq(@platoV2)
-#            expect(@platoV2.clamp(@platoV3,@platoV3)).to eq(@platoV3)
-#
-#            expect(@platoVR2.clamp(@platoVR1,@platoVR3)).to eq(@platoVR2)
-#            expect(@platoVR2.clamp(@platoVR3,@platoVR3)).to eq(@platoVR3)
-#
-#            expect(@platoVL2.clamp(@platoVL3,@platoVL1)).to eq(@platoVL2)
-#            expect(@platoVL2.clamp(@platoVL3,@platoVL3)).to eq(@platoVL3)
-#
-#            expect(@platoC1.clamp(@platoC2,@platoC3)).to eq(@platoC1)
-#            expect(@platoC2.clamp(@platoC3,@platoC3)).to eq(@platoC3)
-#          end
-#
+          #          it "metodos >= y <=" do
+          #            expect(@platoE1<=@platoE2).to eq(true)
+          #            expect(@platoE3<=@platoE2).to eq(false)
+          #            expect(@platoE1<=@platoE1).to eq(true)
+          #
+          #            expect(@platoV1<=@platoV2).to eq(true)
+          #            expect(@platoV3<=@platoV2).to eq(false)
+          #            expect(@platoV1<=@platoV1).to eq(true)
+          #
+          #            expect(@platoVR1<=@platoVR2).to eq(true)
+          #            expect(@platoVR3<=@platoVR2).to eq(false)
+          #            expect(@platoVR1<=@platoVR1).to eq(true)
+          #
+          #            expect(@platoVL1<=@platoVL2).to eq(false)
+          #            expect(@platoVL3<=@platoVL2).to eq(true)
+          #            expect(@platoVL1<=@platoVL1).to eq(true)
+          #
+          #            expect(@platoC1<=@platoC2).to eq(false)
+          #            expect(@platoC3<=@platoC2).to eq(false)
+          #            expect(@platoC1<=@platoC1).to eq(true)
+          #
+          #
+          #            expect(@platoE1>=@platoE2).not_to eq(true)
+          #            expect(@platoE3>=@platoE2).not_to eq(false)
+          #            expect(@platoE1>=@platoE1).to eq(true)
+          #
+          #            expect(@platoV1>=@platoV2).not_to eq(true)
+          #            expect(@platoV3>=@platoV2).not_to eq(false)
+          #            expect(@platoV1>=@platoV1).to eq(true)
+          #
+          #            expect(@platoVR1>=@platoVR2).not_to eq(true)
+          #            expect(@platoVR3>=@platoVR2).not_to eq(false)
+          #            expect(@platoVR1>=@platoVR1).to eq(true)
+          #
+          #            expect(@platoVL1>=@platoVL2).not_to eq(false)
+          #            expect(@platoVL3>=@platoVL2).not_to eq(true)
+          #            expect(@platoVL1>=@platoVL1).to eq(true)
+          #
+          #            expect(@platoC1>=@platoC2).not_to eq(false)
+          #            expect(@platoC3>=@platoC2).not_to eq(false)
+          #            expect(@platoC1>=@platoC1).to eq(true)
+          #          end
+          #
+          #          it "metodo between?" do
+          #            expect(@platoE2.between?(@platoE1,@platoE3)).to eq(true)
+          #            expect(@platoE2.between?(@platoE3,@platoE3)).to eq(false)
+          #
+          #            expect(@platoV2.between?(@platoV1,@platoV3)).to eq(true)
+          #            expect(@platoV2.between?(@platoV3,@platoV3)).to eq(false)
+          #
+          #            expect(@platoVR2.between?(@platoVR1,@platoVR3)).to eq(true)
+          #            expect(@platoVR2.between?(@platoVR3,@platoVR3)).to eq(false)
+          #
+          #            expect(@platoVL2.between?(@platoVL3,@platoVL1)).to eq(true)
+          #            expect(@platoVL2.between?(@platoVL3,@platoVL3)).to eq(false)
+          #
+          #            expect(@platoC1.between?(@platoC2,@platoC3)).to eq(true)
+          #            expect(@platoC2.between?(@platoC3,@platoC3)).to eq(false)
+          #
+          #          end
+          #
+          #          it "metodo clamp" do
+          #            expect(@platoE2.clamp(@platoE1,@platoE3)).to eq(@platoE2)
+          #            expect(@platoE2.clamp(@platoE3,@platoE3)).to eq(@platoE3)
+          #
+          #            expect(@platoV2.clamp(@platoV1,@platoV3)).to eq(@platoV2)
+          #            expect(@platoV2.clamp(@platoV3,@platoV3)).to eq(@platoV3)
+          #
+          #            expect(@platoVR2.clamp(@platoVR1,@platoVR3)).to eq(@platoVR2)
+          #            expect(@platoVR2.clamp(@platoVR3,@platoVR3)).to eq(@platoVR3)
+          #
+          #            expect(@platoVL2.clamp(@platoVL3,@platoVL1)).to eq(@platoVL2)
+          #            expect(@platoVL2.clamp(@platoVL3,@platoVL3)).to eq(@platoVL3)
+          #
+          #            expect(@platoC1.clamp(@platoC2,@platoC3)).to eq(@platoC1)
+          #            expect(@platoC2.clamp(@platoC3,@platoC3)).to eq(@platoC3)
+          #          end
+          #
 
         end
         context "enumeracion" do
           it "collect" do
 
-              expect(@espanola.collect{|x| x}).to eq([@platoE1,@platoE2,@platoE3])
-              expect(@vasca.collect{|x| x}).to eq([@platoV1,@platoV2,@platoV3])
-              expect(@vegetariana.collect{|x| x}).to eq([@platoVR1,@platoVR2,@platoVR3])
-              expect(@vegetaliana.collect{|x| x}).to eq([@platoVL1,@platoVL2,@platoVL3])
-              expect(@carnivora.collect{|x| x}).to eq([@platoC1,@platoC2,@platoC3])
+            expect(@espanola.collect{|x| x}).to eq([@platoE1,@platoE2,@platoE3])
+            expect(@vasca.collect{|x| x}).to eq([@platoV1,@platoV2,@platoV3])
+            expect(@vegetariana.collect{|x| x}).to eq([@platoVR1,@platoVR2,@platoVR3])
+            expect(@vegetaliana.collect{|x| x}).to eq([@platoVL1,@platoVL2,@platoVL3])
+            expect(@carnivora.collect{|x| x}).to eq([@platoC1,@platoC2,@platoC3])
           end
 
-#          it "select" do
-#            expect(@espanola.select{|x| x >= @platoE2 }).to eq([@platoE2,@platoE3])
-#            expect(@vasca.select{|x| x >= @platoV2 }).to eq([@platoV2,@platoV3])
-#            expect(@vegetariana.select{|x| x >= @platoVR2 }).to eq([@platoVR2,@platoVR3])
-#            expect(@vegetaliana.select{|x| x >= @platoVL2 }).to eq([@platoVL1,@platoVL2])
-#            expect(@carnivora.select{|x| x >= @platoC3 }).to eq([@platoC3])
-#
-#            expect(@espanola.select{|x| x < @platoE2 }).to eq([@platoE1])
-#            expect(@vasca.select{|x| x < @platoV2 }).to eq([@platoV1])
-#            expect(@vegetariana.select{|x| x < @platoVR2 }).to eq([@platoVR1])
-#            expect(@vegetaliana.select{|x| x < @platoVL2 }).to eq([@platoVL3])
-#            expect(@carnivora.select{|x| x < @platoC3 }).to eq([@platoC1,@platoC2])
-#          end
-#
-#          it "max" do
-#            expect(@espanola.max).to eq(@platoE3)
-#            expect(@vasca.max).to eq(@platoV3)
-#            expect(@vegetariana.max).to eq(@platoVR3)
-#            expect(@vegetaliana.max).to eq(@platoVL1)
-#            expect(@carnivora.max).to eq(@platoC3)
-#          end
-#
-#          it "min" do
-#            expect(@espanola.min).to eq(@platoE1)
-#            expect(@vasca.min).to eq(@platoV1)
-#            expect(@vegetariana.min).to eq(@platoVR1)
-#            expect(@vegetaliana.min).to eq(@platoVL3)
-#            expect(@carnivora.min).to eq(@platoC2)
-#          end
-#
-#          it "sort" do
-#            expect(@espanola.sort).to eq([@platoE1,@platoE2,@platoE3])
-#            expect(@vasca.sort).to eq([@platoV1,@platoV2,@platoV3])
-#            expect(@vegetariana.sort).to eq([@platoVR1,@platoVR2,@platoVR3])
-#            expect(@vegetaliana.sort).to eq([@platoVL3,@platoVL2,@platoVL1])
-#            expect(@carnivora.sort).to eq([@platoC2,@platoC1,@platoC3])
-#          end
+          #          it "select" do
+          #            expect(@espanola.select{|x| x >= @platoE2 }).to eq([@platoE2,@platoE3])
+          #            expect(@vasca.select{|x| x >= @platoV2 }).to eq([@platoV2,@platoV3])
+          #            expect(@vegetariana.select{|x| x >= @platoVR2 }).to eq([@platoVR2,@platoVR3])
+          #            expect(@vegetaliana.select{|x| x >= @platoVL2 }).to eq([@platoVL1,@platoVL2])
+          #            expect(@carnivora.select{|x| x >= @platoC3 }).to eq([@platoC3])
+          #
+          #            expect(@espanola.select{|x| x < @platoE2 }).to eq([@platoE1])
+          #            expect(@vasca.select{|x| x < @platoV2 }).to eq([@platoV1])
+          #            expect(@vegetariana.select{|x| x < @platoVR2 }).to eq([@platoVR1])
+          #            expect(@vegetaliana.select{|x| x < @platoVL2 }).to eq([@platoVL3])
+          #            expect(@carnivora.select{|x| x < @platoC3 }).to eq([@platoC1,@platoC2])
+          #          end
+          #
+          #          it "max" do
+          #            expect(@espanola.max).to eq(@platoE3)
+          #            expect(@vasca.max).to eq(@platoV3)
+          #            expect(@vegetariana.max).to eq(@platoVR3)
+          #            expect(@vegetaliana.max).to eq(@platoVL1)
+          #            expect(@carnivora.max).to eq(@platoC3)
+          #          end
+          #
+          #          it "min" do
+          #            expect(@espanola.min).to eq(@platoE1)
+          #            expect(@vasca.min).to eq(@platoV1)
+          #            expect(@vegetariana.min).to eq(@platoVR1)
+          #            expect(@vegetaliana.min).to eq(@platoVL3)
+          #            expect(@carnivora.min).to eq(@platoC2)
+          #          end
+          #
+          #          it "sort" do
+          #            expect(@espanola.sort).to eq([@platoE1,@platoE2,@platoE3])
+          #            expect(@vasca.sort).to eq([@platoV1,@platoV2,@platoV3])
+          #            expect(@vegetariana.sort).to eq([@platoVR1,@platoVR2,@platoVR3])
+          #            expect(@vegetaliana.sort).to eq([@platoVL3,@platoVL2,@platoVL1])
+          #            expect(@carnivora.sort).to eq([@platoC2,@platoC1,@platoC3])
+          #          end
 
 
         end
 
         context "P9: huella nutricional" do
-            before :each do
+          before :each do
 
             @menu=Array.new()
             @menu << @platoC1
@@ -877,35 +877,45 @@ RSpec.describe P6 do
             @precio_menu << 3.30
 
 
-            end
+          end
 
-            it "Encontrar plato con max huella" do
+          it "Encontrar plato con max huella" do
 
-                expect(@menu.max).to eq(@platoVR3)
-            end
+            expect(@menu.max).to eq(@platoVR3)
+          end
 
-            it "Cambiarle el precio al plato mayor" do
-                temp_menu = @precio_menu.collect {|precio| precio*@menu.max.huella_nutricional*0.5  }
-                temp_menu.zip(@precio_menu).each do |nuevoP,originalP|
-                    expect(nuevoP).to eq(originalP*@menu.max.huella_nutricional*0.5)
-                end
+          it "Cambiarle el precio al plato mayor" do
+            temp_menu = @precio_menu.collect {|precio| precio*@menu.max.huella_nutricional*0.5  }
+            temp_menu.zip(@precio_menu).each do |nuevoP,originalP|
+              expect(nuevoP).to eq(originalP*@menu.max.huella_nutricional*0.5)
             end
-            it "menu funca" do
-              tmenu=Menu.new("POPURRI") do
-                descripcion "cosas random"
-                componente :descripcion => "CARNE",
-                           :precio => 5.10
-                componente :descripcion => "leche",
-                           :precio => 5.10
-                componente :descripcion => "pimientos",
-                           :precio => 5.10
-              end
-
-              puts tmenu.to_s
-            end
+          end
 
         end
 
+      end
+    end
+
+    describe Menu do
+      before :each do
+        @menu=Menu.new("Carne demencia") do
+          descripcion "Comida festiva"
+          componente :descripcion => "CARNE",
+                      :precio => 5.10
+          componente :descripcion => "leche",
+                      :precio => 2.40
+          componente :descripcion => "pimientos",
+                      :precio => 3.50
+          valores_ambientales :gei => 1500.78 , :terreno =>312.0
+          valores_nutricionales :proteinas => 40.0,
+                      :lipidos => 35.6,
+                      :carbohidratos => 54.9
+
+        end
+      end
+      it "Funciona correctamente el to_s" do
+        expect(@menu).respond_to?(:to_s)
+          puts @menu.to_s
       end
     end
   end
