@@ -1,4 +1,4 @@
-# P9 LPP
+# P10 LPP
 
 ##Lucas Christian Bodson Lobato
 
@@ -6,8 +6,10 @@
 
 ##alu01011111254@ull.edu.es
 
-En esta práctica añadimos sobre la práctica 6,7 Y 8 pruebas usando programacion funcional y modificamos un poco la calse plato hija
-Enumerable y Comparable, además creamos una clase BasicPlato en la cual almacenamos una lista de alimentos y una lista de pesos por alimento, y de esta hereda otra clase plato la cual además incluye funciones para hallar el impacto ambiental.
+En esta práctica seguiremos con el tema de la nutricion, pero esta vez creando una clase menu utilizando la metodología dsl orientada al usuarioy añadiendo travis, coveralls y finalizando el gem
+
+## Travis
+  You can see it here https://travis-ci.com/alu0101111254/travis_repository
 
 ## Installacion
 
