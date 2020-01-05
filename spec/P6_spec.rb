@@ -891,9 +891,19 @@ RSpec.describe P6 do
                 end
             end
             it "menu funca" do
-              tmenu=Menu.new("POPURRI","Cosas aleatorias",@menu,@precio_menu)
-              puts tmenu.to_s()
+              tmenu=Menu.new("POPURRI") do
+                descripcion "cosas random"
+                componente :descripcion => "CARNE",
+                           :precio => 5.10
+                componente :descripcion => "leche",
+                           :precio => 5.10
+                componente :descripcion => "pimientos",
+                           :precio => 5.10
+              end
+
+              puts tmenu.to_s
             end
+
         end
 
       end
