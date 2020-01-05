@@ -10,7 +10,8 @@ En esta práctica seguiremos con el tema de la nutricion, pero esta vez creando 
 
 ## Travis
   You can see it here https://travis-ci.com/alu0101111254/travis_repository
-
+  
+[![Coverage Status](https://coveralls.io/repos/github/alu0101111254/travis_repository/badge.svg?branch=master)](https://coveralls.io/github/alu0101111254/travis_repository?branch=master)
 ## Installacion
 
 
