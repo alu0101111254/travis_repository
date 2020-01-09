@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    P6 (0.1.0)
+    P6-alu0101111254 (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -80,7 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  P6!
+  P6-alu0101111254!
   bundler (~> 2.0)
   coveralls
   guard

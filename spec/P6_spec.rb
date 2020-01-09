@@ -896,26 +896,100 @@ RSpec.describe P6 do
       end
     end
 
+    describe PlatoDSL do
+      before :each do
+        vaca=Alimento.new("Carne de vaca",21.1,0,3.1,50.0,164.0)
+        choco=Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+        lente=Alimento.new("lentejas", 23.5, 52.0,1.4,0.4,3.4)
+        queso=Alimento.new("queso", 25.0,1.3,33.0,11.0,41.0)
+        huevo=Alimento.new("huevo", 13.0,1.1,11.0,4.2,5.7)
+
+        @plato=PlatoDSL.new() do
+          nombre "Testplato"
+          alimento :name => vaca,
+                      :peso => 5.10
+          alimento :name => huevo,
+                      :peso => 2.40
+          alimento :name => choco,
+                      :peso => 3.50
+        end
+      end
+      it "Funciona correctamente el to_s" do
+        expect(@plato).respond_to?(:to_s)
+        expect(@plato.to_s).to eq("Testplato
+Ingredientes:
+  Nombre: Carne de vaca Proteínas: 21.1 Carbohidratos: 0 Lípidos: 3.1 GEI: 50.0 Terreno: 164.0
+   Peso: 5.1
+  Nombre: huevo Proteínas: 13.0 Carbohidratos: 1.1 Lípidos: 11.0 GEI: 4.2 Terreno: 5.7
+   Peso: 2.4
+  Nombre: Chocolate Proteínas: 5.3 Carbohidratos: 47.0 Lípidos: 30.0 GEI: 2.3 Terreno: 3.4
+   Peso: 3.5")
+      end
+    end
+
     describe Menu do
       before :each do
+        @ingredientesC1=Lista.new(nil,nil)
+        @ingredientesC1.insert(Alimento.new("Huevos", 13.0, 1.1, 11.0, 4.2, 5.7))
+        @ingredientesC1.insert(Alimento.new("Cerdo", 21.5*1.5, 0.0, 6.3*1.5, 7.6*1.5, 11.0*1.5))
+        @proporcionesC1=Lista.new(nil,nil)
+        @proporcionesC1.insert(100.0)
+        @proporcionesC1.insert(150.0)
+        platoC1=Plato.new("Desayuno americano",@ingredientesC1,@proporcionesC1)
+
+        @ingredientesC2=Lista.new(nil,nil)
+        @ingredientesC2.insert(Alimento.new("Café", 0.1, 0.0, 0.0, 0.4, 0.3))
+        @ingredientesC2.insert(Alimento.new("Leche de vaca", 3.3*0.5, 4.8*0.5, 3.2*0.5, 3.2*0.5, 8.9*0.5))
+        @ingredientesC2.insert(Alimento.new("Carne de vaca", 42.2, 0.0, 6.2, 100.0, 328.0))
+        @proporcionesC2=Lista.new(nil,nil)
+        @proporcionesC2.insert(100.0)
+        @proporcionesC2.insert(50.0)
+        @proporcionesC2.insert(200.0)
+        platoC2=Plato.new("Steak + café con leche",@ingredientesC2,@proporcionesC2)
+
+        @ingredientesC3=Lista.new(nil,nil)
+        @ingredientesC3.insert(Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0))
+        @ingredientesC3.insert(Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4))
+        @proporcionesC3=Lista.new(nil,nil)
+        @proporcionesC3.insert(100.0)
+        @proporcionesC3.insert(100.0)
+        platoC3=Plato.new("Lentejas compuestas",@ingredientesC3,@proporcionesC3)
+
         @menu=Menu.new("Carne demencia") do
           descripcion "Comida festiva"
-          componente :descripcion => "CARNE",
+          componente :nombre => platoC1 ,
+                      :descripcion => "ingredientes: huevo, bacon",
                       :precio => 5.10
-          componente :descripcion => "leche",
+          componente :nombre => platoC2 ,
+                      :descripcion => "ingredientes: carne, leche, café",
                       :precio => 2.40
-          componente :descripcion => "pimientos",
+          componente :nombre =>platoC3 ,
+                      :descripcion => "ingredientes: lentejas, cordero",
                       :precio => 3.50
-          valores_ambientales :gei => 1500.78 , :terreno =>312.0
-          valores_nutricionales :proteinas => 40.0,
-                      :lipidos => 35.6,
-                      :carbohidratos => 54.9
 
         end
       end
       it "Funciona correctamente el to_s" do
         expect(@menu).respond_to?(:to_s)
-          puts @menu.to_s
+        expect(@menu.to_s).to eq("Menu Carne demencia 11.0 €
+Descripcion: Comida festiva
+Platos:
+ Desayuno americano  5.1 €
+   ingredientes: huevo, bacon
+   VCT: 369.45000000000005
+   GEI: 15.599999999999998  Terreno: 22.2
+ Steak + café con leche  2.4 €
+   ingredientes: carne, leche, café
+   VCT: 255.60000000000002
+   GEI: 102.0  Terreno: 332.75
+ Lentejas compuestas  3.5 €
+   ingredientes: lentejas, cordero
+   VCT: 539.6
+   GEI: 20.4  Terreno: 188.4
+
+VCT TOTAL:  1164.65
+Valores ambientales totales:
+ GEI: 138.0 Terreno: 543.35")
       end
     end
   end
